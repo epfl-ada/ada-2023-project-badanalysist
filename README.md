@@ -1,33 +1,33 @@
 # Title
 ## Abstract
-TBC
+A 150 word description of the project idea and goals. What’s the motivation behind your project? What story would you like to tell, and why?
 
 ## Research questions
-- question 1
-- question 2
-- ...
+A list of research questions you would like to address during the project.
   
 ## Data (Xinyi)
-Content
+- Why do we select these data?
+- Data processing
+- Data description (That you understand what's in the data (formats, distributions, missing values, correlations, etc.)
 
 ## Project plans
 ### Task 1: Clustering for Popularity and User Preference (Siyuan)
-a.	What we will do. (the motivation behind your project? What story would you like to tell, and why?)
-b.	Methods
-c.	Data relevance (Show us that you’ve read the docs and some examples)
-d.	Feasibility
+-	What we will do. (the motivation behind your project? What story would you like to tell, and why?)
+- Methods （That you have a reasonable plan and ideas for methods you’re going to use, giving their essential mathematical details in the notebook.）
+- Data relevance (Show us that you’ve read the docs and some examples)
+- Feasibility （That your plan for analysis and communication is reasonable and sound, potentially discussing alternatives to your choices that you considered but dropped.）
 
 ### Task 2: Beer Name Reflect Beer Flavor (Zhixun)
-a.	What we will do. (the motivation behind your project? What story would you like to tell, and why?)
-b.	Methods
-c.	Data relevance (Show us that you’ve read the docs and some examples)
-d.	Feasibility
+- What we will do. (the motivation behind your project? What story would you like to tell, and why?)
+- Methods （That you have a reasonable plan and ideas for methods you’re going to use, giving their essential mathematical details in the notebook.）
+- Data relevance (Show us that you’ve read the docs and some examples)
+- Feasibility （That your plan for analysis and communication is reasonable and sound, potentially discussing alternatives to your choices that you considered but dropped.）
 
 ### Taks 3: Recommendation Function (Yihan)
-a.	What we will do. (the motivation behind your project? What story would you like to tell, and why?)
-b.	Methods
-c.	Data relevance (Show us that you’ve read the docs and some examples)
-d.	Feasibility
+- What we will do. (the motivation behind your project? What story would you like to tell, and why?)
+- Methods （That you have a reasonable plan and ideas for methods you’re going to use, giving their essential mathematical details in the notebook.）
+- Data relevance (Show us that you’ve read the docs and some examples)
+- Feasibility
 
 ## Timeline
 TBC
