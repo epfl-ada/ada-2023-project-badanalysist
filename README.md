@@ -27,7 +27,7 @@ A list of research questions you would like to address during the project.
 - What we will do. (the motivation behind your project? What story would you like to tell, and why?)
 - Methods （That you have a reasonable plan and ideas for methods you’re going to use, giving their essential mathematical details in the notebook.）
 - Data relevance (Show us that you’ve read the docs and some examples)
-- Feasibility
+- Feasibility （That your plan for analysis and communication is reasonable and sound, potentially discussing alternatives to your choices that you considered but dropped.）
 
 ## Timeline
 TBC
