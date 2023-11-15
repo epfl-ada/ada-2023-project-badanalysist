@@ -13,10 +13,9 @@ A list of research questions you would like to address during the project.
 
 ## Project plans
 ### Task 1: Clustering for Popularity and User Preference (Siyuan)
--	What we will do. (the motivation behind your project? What story would you like to tell, and why?)
-- Methods （That you have a reasonable plan and ideas for methods you’re going to use, giving their essential mathematical details in the notebook.）
-- Data relevance (Show us that you’ve read the docs and some examples)
-- Feasibility （That your plan for analysis and communication is reasonable and sound, potentially discussing alternatives to your choices that you considered but dropped.）
+In our initial analysis of the rating dataset, we have identified key attributes such as taste, palate, aroma, appearance, and abv (alcohol by volume), and aim to explore their interrelations and impact on the overall rating. Our preliminary ridge regression model reveals that these five attributes explain the overall rating in a great extent (R^2 = 0.76) in the test set.
+
+To systematically examine the characteristics of beers, we plan to integrate k-means clustering with regression analysis. This approach involves selecting an optimal number of clusters (k) based on the overall performance of regression, allowing us to categorize beers into distinct clusters. We will then investigate the contribution of each cluster’s attributes on their overall ratings, as well as regional preferences for different beer categories. The insights gleaned from this analysis will not only facilitate targeted recommendations for customers in various regions but also guide breweries in enhancing the appeal of their beers.
 
 ### Task 2: Beer Name Reflect Beer Flavor (Zhixun)
 - What we will do
