@@ -1,9 +1,8 @@
 import pandas as pd
-import numpy as up
 
 def split_matched_data(data):
     """split data from the two websites"""
-    data_rb = data.filter(like='rb', axis=1)ß
+    data_rb = data.filter(like='rb', axis=1)
     data_ba = data.filter(like='ba', axis=1)
     data_rb.columns = data_rb.iloc[0]
     data_rb = data_rb.iloc[1:].reset_index(drop=True)
