@@ -29,7 +29,7 @@ In our initial analysis of the rating dataset, we have identified key attributes
 
 To systematically examine the characteristics of beers, we plan to integrate k-means clustering with regression analysis. This approach involves selecting an optimal number of clusters (k) based on the overall performance of regression, allowing us to categorize beers into distinct clusters. We will then investigate the contribution of each cluster’s attributes on their overall ratings, as well as regional preferences for different beer categories. The insights gleaned from this analysis will not only facilitate targeted recommendations for customers in various regions but also guide breweries in enhancing the appeal of their beers.
 
-### Task 2: Beer Name Reflect Beer Flavor (Zhixun)
+### Task 2: Beer Name Reflect Beer Flavor (Zhixun) %%如果太长我可以删
 Does the beer's name "Tokyo" make users pay more attention to the aroma of oriental spices (such as coriander)? Beer names come in a wide range of styles, from straightforward descriptions like "Co-op Wheat Beer" to creatively evocative ones like "Just Married" or "Pheasantry Dancing Dragonfly". These names vary not only in style but also in the language they are presented in, from English to Finnish, Hungarian, and more. 
 We are intrigued by the possibility that the emotional tone and language conveyed by a beer's name might affect the review.
 
