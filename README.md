@@ -6,15 +6,18 @@ A 150 word description of the project idea and goals. What’s the motivation be
 A list of research questions you would like to address during the project.
 - Does the style and language of a beer's name have an impact on its rating and the sentiments expressed in its review text?
   
-## Data (Xinyi)
+## Data
 ### Data Selection: matched beer data from the two website
 1.	Data Handle-ability: Our dataset, with 6,084 breweries and 45,640 beers without a minimum rating requirement, is large but manageable. Higher rating thresholds refine the dataset, improving processing speed and quality by focusing on frequently rated beers. At 20 ratings, the retention of 1,079 breweries and 4,051 beers suggests a robust sample for analysis.[^1]
 2.	Sufficiency for the Project: With over 732,000 and 542,000 ratings from BeerAdvocate and RateBeer respectively, even at a 20-rating cutoff, our dataset provides ample data for a complex recommendation system and is rich enough for machine learning applications.[^1]
 3.	Advantages of Matched Data: Matched data ensures cross-platform consistency, enhancing model reliability by merging ratings from both BeerAdvocate and RateBeer. This helps reduce data redundancy and improve quality, aiding the model's predictive accuracy for beers listed on both sites.
 Overall, the size of our dataset indicates we have sufficient information to build a recommendation system. The matched dataset is particularly beneficial for ensuring the quality and performance of the model, especially when processing user ratings and feedback data.
 
-- Data processing
-- Data description (That you understand what's in the data (formats, distributions, missing values, correlations, etc.)
+### Data Preprocessing
+We initially planned to utilize the full dataset from both websites, converting all text files to CSV for easier handling. Due to the large size making it impractical for GitHub sharing and slow to process, we chose to use the original pre-processed matched data: beers.csv, breweries.csv, ratings.csv, and users_approx.csv. These files are adequate and clear for our needs, requiring no additional preprocessing.
+
+### Data Description 
+
 
 ## Project plans
 ### Task 1: Clustering for Popularity and User Preference (Siyuan)
@@ -43,6 +46,9 @@ where $Rating_{i,j}$ could be the rating score or sentiment of rating text, $Nam
 
   We plan to focus more on rating score instead of the review text.（That your plan for analysis and communication is reasonable and sound, potentially discussing alternatives to your choices that you considered but dropped.）
 
+### Task 4: Graph Network Modeling
+
+
 ### Task 3: Recommendation Function (Yihan)
 - What we will do. (the motivation behind your project? What story would you like to tell, and why?)
 - Methods （That you have a reasonable plan and ideas for methods you’re going to use, giving their essential mathematical details in the notebook.）
@@ -60,6 +66,3 @@ TBC
 
 ## Reference
 [^1]: Lederrey, G., & West, R. (2018, April). When sheep shop: measuring herding effects in product ratings with natural experiments. In Proceedings of the 2018 world wide web conference (pp. 793-802).
-
-
-https://epfl-ada.github.io/teaching/fall2023/cs401/projects/
