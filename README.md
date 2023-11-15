@@ -33,11 +33,10 @@ To systematically examine the characteristics of beers, we plan to integrate k-m
 Does the beer's name "Tokyo" make users pay more attention to the aroma of oriental spices (such as coriander)? Beer names come in a wide range of styles, from straightforward descriptions like "Co-op Wheat Beer" to creatively evocative ones like "Just Married" or "Pheasantry Dancing Dragonfly". These names vary not only in style but also in the language they are presented in, from English to Finnish, Hungarian, and more. 
 We are intrigued by the possibility that the emotional tone and language conveyed by a beer's name might affect the review.
 
-To get the sentiment of beer's name, we could use a pre-trained sentiment analysis model from Hugging Face's transformers library, and it leverages the pipeline-interface to easily perform sentiment analysis on text data, with the model like transformer-based distilbert-base-uncased-finetuned-sst-2-english. 
+To get the sentiment of beer's name, we could use a pre-trained sentiment analysis model from Hugging Face's transformers library, with pipeline-interface and transformer-based distilbert-base-uncased-finetuned-sst-2-english model. 
 To identify the language of the beer's name, we could use langdetect Library based on Google's language-detection library and get a two-letter language code.
-Morever, we perform linear regression with ordinary least squares (OLS) to see the correlation between the rating and the sentiment and language of the beer's name. 
 
-Preliminary results show that the intersection of emotion and language (English) is significantly positive at the 1% confidence level. This shows that when the language is English, the more positive the sentiment of the name, the higher the user's rating for it (currently our model is based on English). We'll also run some robust tests and focus on the composition of the rating.
+Morever, we perform linear regression with ordinary least squares (OLS) to see the correlation between the rating and the sentiment and language of the beer's name. Preliminary results show that the intersection of emotion and language (English) is significantly positive at the 1% confidence level. This shows that when the language is English, the more positive the sentiment of the name, the higher the user's rating for it (currently our model is based on English). We'll also run some robust tests and focus on the composition of the rating.
 
 
 ### Task 3: Beer style similarities
