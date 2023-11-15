@@ -22,7 +22,7 @@ A list of research questions you would like to address during the project.
 
 - Methods （That you have a reasonable plan and ideas for methods you’re going to use, giving their essential mathematical details in the notebook.）
 - Data relevance (Show us that you’ve read the docs and some examples)
-$$Rating_{i,j} = \beta_1 \times sentiments \quad within \quad name_i + \beta_2 \times X_j + \beta_3 \times Y_i +\epsilon_{i,j}$$
+$$Rating_{i,j} = \beta_1 \times + NameSentiments_i + \beta_2 \times X_j + \beta_3 \times Y_i +\epsilon_{i,j}$$
 - Feasibility （That your plan for analysis and communication is reasonable and sound, potentially discussing alternatives to your choices that you considered but dropped.）
 
 ### Task 3: Recommendation Function (Yihan)
