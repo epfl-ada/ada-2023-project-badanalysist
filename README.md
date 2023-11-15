@@ -59,7 +59,7 @@ TBC
 TBC
 
 ## Reference
-[^1]Lederrey, G., & West, R. (2018, April). When sheep shop: measuring herding effects in product ratings with natural experiments. In Proceedings of the 2018 world wide web conference (pp. 793-802).![Uploading image.png…]()
+[^1]: Lederrey, G., & West, R. (2018, April). When sheep shop: measuring herding effects in product ratings with natural experiments. In Proceedings of the 2018 world wide web conference (pp. 793-802).
 
 
 https://epfl-ada.github.io/teaching/fall2023/cs401/projects/
