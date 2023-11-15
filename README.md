@@ -47,7 +47,8 @@ where $Rating_{i,j}$ could be the rating score or sentiment of rating text, $Nam
   We plan to focus more on rating score instead of the review text.（That your plan for analysis and communication is reasonable and sound, potentially discussing alternatives to your choices that you considered but dropped.）
 
 ### Task 4: Graph Network Modeling
-
+We plan to leverage our comprehensive beer dataset to construct a graph network model in Neo4j. This model will form the backbone of our visualization efforts and interactive recommendation system. It will map the intricate relationships between beers, their styles, breweries, and users within their respective locations. As depicted in the model diagram, 'Beer' serves as the central node, linked to 'Style' through 'belongs_to' relationships, to 'Breweries' via 'produced_by,' and to 'Users' who have 'rated' the beers. The 'Breweries' are connected to 'Location,' establishing a geospatial context. Relationships such as 'is_similar_to' are computed from task 1. This structured network will facilitate complex queries and enable us to generate personalized beer recommendations by analyzing patterns and preferences within the data.
+![image]()
 
 ### Task 3: Recommendation Function (Yihan)
 - What we will do. (the motivation behind your project? What story would you like to tell, and why?)
