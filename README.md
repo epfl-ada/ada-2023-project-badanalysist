@@ -18,11 +18,11 @@ A list of research questions you would like to address during the project.
 - Feasibility （That your plan for analysis and communication is reasonable and sound, potentially discussing alternatives to your choices that you considered but dropped.）
 
 ### Task 2: Beer Name Reflect Beer Flavor (Zhixun)
-- \textbf{What we will do} Does the beer's name "Tokyo" make users pay more attention to the aroma of oriental spices (such as coriander)? We are intrigued by the possibility that the emotional tone and language conveyed by a beer's name might affect not only the rating but also the content and sentiments within the rating text.
+- What we will do: Does the beer's name "Tokyo" make users pay more attention to the aroma of oriental spices (such as coriander)? We are intrigued by the possibility that the emotional tone and language conveyed by a beer's name might affect not only the rating but also the content and sentiments within the rating text.
 
-- Methods:
-$$Rating_{i,j} = \beta_0 + \beta_1 \times + NameSentiments_i + \beta_2 \times X_i+ \beta_3 \times Y_j +\epsilon_{i,j}$$
-where $NameSentiments$ is a dummy variables which indicates whether the name of beer has a special sentiment or style, $X_i$ are controal variables of beers, $Y_j$ are controal variables of users, $\beta_0$ is an overall constant.
+- Methods: We plan to run a linear model and use NLP to get the variables:
+$$Rating_{i,j} = \beta_0 + \beta_1 \times NameSentiments_i + \beta_2 \times NameLanguages_i + \beta_3 \times X_i+ \beta_4 \times Y_j +\epsilon_{i,j}$$
+where $NameSentiments_i$ is a dummy variables which indicates whether the name of beer has a special sentiment or style, $NameLanguages_i$ is a dummy variables of the language of beer's name, $X_i$ are controal variables of beers, $Y_j$ are controal variables of users, $\beta_0$ is an overall constant.
 - Data  relevance (Show us that you’ve read the docs and some examples)
 
 - Feasibility （That your plan for analysis and communication is reasonable and sound, potentially discussing alternatives to your choices that you considered but dropped.）
