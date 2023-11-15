@@ -1,4 +1,4 @@
-![image](https://github.com/epfl-ada/ada-2023-project-badanalysist/assets/116504205/f2566238-c7f0-41ee-bdb7-48ac4d356168)# Title
+# Title
 ## Abstract
 A 150 word description of the project idea and goals. What’s the motivation behind your project? What story would you like to tell, and why?
 
