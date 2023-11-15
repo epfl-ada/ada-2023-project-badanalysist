@@ -21,10 +21,10 @@ A list of research questions you would like to address during the project.
 ### Task 2: Beer Name Reflect Beer Flavor (Zhixun)
 - What we will do: Does the beer's name "Tokyo" make users pay more attention to the aroma of oriental spices (such as coriander)? We are intrigued by the possibility that the emotional tone and language conveyed by a beer's name might affect not only the rating but also the content and sentiments within the rating text.
 - Methods:
-* Linear Regression
-* NLP: We'll utilize NLP model to get the sentiment analysis of rating text and language identification of beer's name.
+  - Linear Regression
+  - NLP: We'll utilize NLP model to get the sentiment analysis of rating text and language identification of beer's name.
 
-%%% should move to notebook - We plan to run a linear model and use NLP to get the variables:
+  - should move to notebook - We plan to run a linear model and use NLP to get the variables:
 $$Rating_{i,j} = \beta_0 + \beta_1 \times NameSentiments_i + \beta_2 \times NameLanguages_i + \beta_3 \times X_i+ \beta_4 \times Y_j +\epsilon_{i,j}$$
 where $Rating_{i,j}$ could be the rating rate or sentiment of rating text, $NameSentiments_i$ is a dummy variable that indicates whether the name of beer has a special sentiment or style, $NameLanguages_i$ is a dummy variable of the language of beer's name, $X_i$ are control variables of beers, $Y_j$ are control variables of users, $\beta_0$ is an overall constant. We'll utilize NLP model to get $NameSentiments_i$  $NameLanguages_i$.
 - Data  relevance
