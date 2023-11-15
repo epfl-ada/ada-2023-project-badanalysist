@@ -1,4 +1,4 @@
-# Title
+![image](https://github.com/epfl-ada/ada-2023-project-badanalysist/assets/116504205/f2566238-c7f0-41ee-bdb7-48ac4d356168)# Title
 ## Abstract
 A 150 word description of the project idea and goals. What’s the motivation behind your project? What story would you like to tell, and why?
 
@@ -7,7 +7,12 @@ A list of research questions you would like to address during the project.
 - Does the style and language of a beer's name have an impact on its rating and the sentiments expressed in its review text?
   
 ## Data (Xinyi)
-- Why do we select these data?
+### Data Selection
+1.	Data Handle-ability: Our dataset, with 6,084 breweries and 45,640 beers without a minimum rating requirement, is large but manageable. Higher rating thresholds refine the dataset, improving processing speed and quality by focusing on frequently rated beers. At 20 ratings, the retention of 1,079 breweries and 4,051 beers suggests a robust sample for analysis.[^1]
+2.	Sufficiency for the Project: With over 732,000 and 542,000 ratings from BeerAdvocate and RateBeer respectively, even at a 20-rating cutoff, your dataset provides ample data for a complex recommendation system and is rich enough for machine learning applications.[^1]
+3.	Advantages of Matched Data: Matched data ensures cross-platform consistency, enhancing model reliability by merging ratings from both BeerAdvocate and RateBeer. This helps reduce data redundancy and improve quality, aiding the model's predictive accuracy for beers listed on both sites.
+Overall, the size of your dataset indicates you have sufficient information to build a recommendation system. The matched dataset is particularly beneficial for ensuring the quality and performance of the model, especially when processing user ratings and feedback data.
+
 - Data processing
 - Data description (That you understand what's in the data (formats, distributions, missing values, correlations, etc.)
 
@@ -52,5 +57,9 @@ TBC
 
 ## Questions for TAs
 TBC
+
+## Reference
+[^1]Lederrey, G., & West, R. (2018, April). When sheep shop: measuring herding effects in product ratings with natural experiments. In Proceedings of the 2018 world wide web conference (pp. 793-802).![Uploading image.png…]()
+
 
 https://epfl-ada.github.io/teaching/fall2023/cs401/projects/
