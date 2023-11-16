@@ -55,8 +55,16 @@ The adjective keywords from both text reviews and beer style description from ou
 
 
 ## Timeline
-TBC
+- **16.11.2023** Data Handling and Preprocessing & Initial Exploratory Data Analysis
 
+- **30.11.2023** Task1-5 Implementation and Preliminary Analysis
+
+- **07.12.2023** Compile Final Analysis
+
+- **14.12.2023** Report Writing
+
+- **22.12.2023** Milestone 3 Deadline
+- 
 ## Team Organization
 
 ## Questions for TAs
