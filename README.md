@@ -30,14 +30,12 @@ In our initial analysis of the rating dataset, we have identified key attributes
 
 To systematically examine the characteristics of beers, we plan to integrate k-means clustering with regression analysis. This approach involves selecting an optimal number of clusters (k) based on the overall performance of regression, allowing us to categorize beers into distinct clusters. We will then investigate the contribution of each cluster’s attributes on their overall ratings, as well as regional preferences for different beer categories. The insights gleaned from this analysis will not only facilitate targeted recommendations for customers in various regions but also guide breweries in enhancing the appeal of their beers.
 
-### Task 2: Beer Name Reflect Beer Flavor (Zhixun) %%如果太长我可以删
-Does the beer's name "Tokyo" make users pay more attention to the aroma of oriental spices (such as coriander)? Beer names come in a wide range of styles, from straightforward descriptions like "Co-op Wheat Beer" to creatively evocative ones like "Just Married" or "Pheasantry Dancing Dragonfly". These names vary not only in style but also in the language they are presented in, from English to Finnish, Hungarian, and more. 
-We are intrigued by the possibility that the emotional tone and language conveyed by a beer's name might affect the review.
+### Task 2: Beer Name Reflect Beer Flavor (Zhixun)
+Do beer names like "Tokyo" influence users' focus on oriental spices like coriander in the aroma? Beer names, ranging from descriptive "Co-op Wheat Beer" to creative ones like "Just Married," vary in style and language, such as English and Hungarian. We explore how a beer's name, with its emotional tone and language, may impact reviews.
 
-To get the sentiment of beer's name, we could use a pre-trained sentiment analysis model from Hugging Face's transformers library, with pipeline-interface and transformer-based distilbert-base-uncased-finetuned-sst-2-english model. 
-To identify the language of the beer's name, we could use langdetect Library based on Google's language-detection library and get a two-letter language code.
+For sentiment analysis, we employ Hugging Face's transformers library with a pre-trained distilbert-base-uncased-finetuned-sst-2-english model. To determine language, we use the langdetect library based on Google's language-detection library and obtain a two-letter language code.
 
-Morever, we perform linear regression with ordinary least squares (OLS) to see the correlation between the rating and the sentiment and language of the beer's name. Preliminary results show that the intersection of emotion and language (English) is significantly positive at the 1% confidence level. This shows that when the language is English, the more positive the sentiment of the name, the higher the user's rating for it (currently our model is based on English). We'll also run some robust tests, focus on the composition of the rating and review text.
+Linear regression (OLS) examines the correlation between rating and sentiment/language of the beer's name. Preliminary findings indicate a significantly positive correlation (1% confidence level) in English. Positive sentiment in English names corresponds to higher user ratings. We'll also run some robust tests, focus on the composition of the rating and review text.
 
 ### Task 3: Beer style similarities
 Calculating the "distance" between different beer styles based on their textual descriptions involves using text similarity measures that can quantify how close or different the descriptions are. Tools like Word2Vec or GloVe convert words into high-dimensional vectors in such a way that semantically similar words are closer in the vector space. You can convert the whole text into a vector by taking the average of all word vectors in the text and then use cosine similarity to find distances between text vectors. In Python, we can use library gensim for Word2Vec to compute these distances.
@@ -55,16 +53,16 @@ The adjective keywords from both text reviews and beer style description from ou
 
 
 ## Timeline
-- **16.11.2023** Data Handling and Preprocessing & Initial Exploratory Data Analysis
+**16.11.2023** Data Handling and Preprocessing & Initial Exploratory Data Analysis
 
-- **30.11.2023** Task1-5 Implementation and Preliminary Analysis
+**30.11.2023** Task1-5 Implementation and Preliminary Analysis
 
-- **07.12.2023** Compile Final Analysis
+**07.12.2023** Compile Final Analysis
 
-- **14.12.2023** Report Writing
+**14.12.2023** Report Writing
 
-- **22.12.2023** Milestone 3 Deadline
-- 
+**22.12.2023** Milestone 3 Deadline
+
 ## Team Organization
 
 ## Questions for TAs
