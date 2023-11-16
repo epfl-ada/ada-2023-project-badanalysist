@@ -48,10 +48,9 @@ We plan to leverage our comprehensive beer dataset to construct a graph network 
 <div align=center><img style="margin: 0 auto;" src ="https://github.com/epfl-ada/ada-2023-project-badanalysist/blob/main/img/graph%20network%20modeling.png" width="40%" height="40%"></div>
 
 ### Task 5: Recommendation Function (Yihan)
-- What we will do. (the motivation behind your project? What story would you like to tell, and why?)
-- Methods （That you have a reasonable plan and ideas for methods you’re going to use, giving their essential mathematical details in the notebook.）
-- Data relevance (Show us that you’ve read the docs and some examples)
-- Feasibility （That your plan for analysis and communication is reasonable and sound, potentially discussing alternatives to your choices that you considered but dropped.）
+With all the information gathered from beer-review platforms and data analysis, we would like to build a useful little tool for beer recommendation. In the absence of systematic a priori knowledge of beer, users may want to query beer recommendations with different logics. Beyond the basic query of popularity and abv, our recommendation system would also leverage information of beer's quality, such as light, bitter, smooth, etc. Besides, based on our initail data analysis, different region of people might have a different preference of beers, a regional recommendation might be useful for both locals and exotic tourists.
+
+The adjective keywords from both text reviews and beer style description from our additional data could be retrieved using NLP libraries like nltk, and serve as an additional label for different beers. The keyword labels could also be visualized using liberaries like WorldCloud and pop up while recommendation to give the user a general sense of that beer. Whereas user location information could be grouped as Europe, North America, Africa, Asia, etc. and corresponding regional beer popularity could be conducted based on number of reviews and average overall rating. 
 
 ## Timeline
 TBC
