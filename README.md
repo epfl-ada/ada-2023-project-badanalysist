@@ -21,7 +21,7 @@ We initially planned to utilize the full dataset from both websites, converting 
 The majority of our users and breweries are from the United States, hence the predominance of American-style beer products, with American IPA having the highest proportion at 12.15%. After scaling, the distributions on BeerRate and BeerAdvocate are very similar. Therefore, we will attempt to explore the connections across the features. 
 
 ### Additional Data
-We want to found similarities among beer styles, so we found additional data to describe how to define each style in our dataset in beer association website.[^2] We use web crawler to get styles description to enrich beer style definitions. By examining the different dimensions of these beers, we can distinguish and understand the various beer styles more comprehensively and in greater detail, and identify their similarities.
+We want to found similarities among beer styles, so we found additional data to describe how to define each style in our dataset in beer association website.[^2] We use web crawler to get styles description to enrich beer style definitions. In our additional dataset, each style is explained by color, clarity, Perceived Malt Aroma & Flavor, Perceived Hop Aroma & Flavor, Perceived Bitterness and Fermentation Characteristics. By examining the different dimensions of these beers, we can distinguish and understand the various beer styles more comprehensively and in greater detail, and identify their similarities.
 
 ## Project plans
 ### Task 1: Clustering for Popularity and User Taste Preference (Siyuan)
@@ -37,7 +37,6 @@ To get the sentiment of beer's name, we could use a pre-trained sentiment analys
 To identify the language of the beer's name, we could use langdetect Library based on Google's language-detection library and get a two-letter language code.
 
 Morever, we perform linear regression with ordinary least squares (OLS) to see the correlation between the rating and the sentiment and language of the beer's name. Preliminary results show that the intersection of emotion and language (English) is significantly positive at the 1% confidence level. This shows that when the language is English, the more positive the sentiment of the name, the higher the user's rating for it (currently our model is based on English). We'll also run some robust tests, focus on the composition of the rating and review text.
-
 
 ### Task 3: Beer style similarities
 Calculating the "distance" between different beer styles based on their textual descriptions involves using text similarity measures that can quantify how close or different the descriptions are. Tools like Word2Vec or GloVe convert words into high-dimensional vectors in such a way that semantically similar words are closer in the vector space. You can convert the whole text into a vector by taking the average of all word vectors in the text and then use cosine similarity to find distances between text vectors. In Python, we can use library gensim for Word2Vec to compute these distances.
