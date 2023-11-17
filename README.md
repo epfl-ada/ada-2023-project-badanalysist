@@ -18,15 +18,15 @@ Tasks include clustering to identify regional preferences, analyzing sentiment a
 For ease of use, we selecte pre-processed files (beers.csv, breweries.csv, ratings.csv, users_approx.csv), requiring no further data processing. We notice the majority of the dataset focuses on American-style beers, mainly due to the predominance of American breweries and users in the data, with American IPA being a significant style. This aspect of the dataset will be valuable in analyzing regional preferences and trends in beer styles.
 
 
-
+## Methods
 ### Task 1: Clustering for Popularity and User Taste Preference (Siyuan)
 In our initial analysis of the rating dataset, we have identified key attributes such as taste, palate, aroma, appearance, and abv (alcohol by volume), and aim to explore their interrelations and impact on the overall rating. Our preliminary ridge regression model reveals that these five attributes explain the overall rating to a great extent (R^2 = 0.76) in the test set. We plan to use k-means clustering integrated with regression analysis to categorize beers based on these attributes and assess their impact on ratings and regional preferences. This approach will inform targeted customer recommendations and help breweries improve their products' appeal.
 
-### Task 2: Beer Name Reflect Beer Flavor (Zhixun)
-Do beer names like "Tokyo" influence users' focus on oriental spices like coriander in the aroma? Beer names, ranging from descriptive "Co-op Wheat Beer" to creative ones like "Just Married," vary in style and language, such as English and Hungarian. We explore how a beer's name, with its emotional tone and language, may impact reviews.
+### Sentiment analysis and language identification of beer names (Zhixun)
+Do beer names like "Tokyo" influence users' focus on oriental spices like coriander in the aroma? We investigate how a beer's name, with its emotional tone (ranging from descriptive, like 'Co-op Wheat Beer,' to creative, such as 'Pheasantry Dancing Dragonfly') and language (spanning from English to Hungarian), may influence reviews.
 
-For sentiment analysis, we employ Hugging Face's transformers library with a pre-trained distilbert-base-uncased-finetuned-sst-2-english model. To identify language, we use the langdetect library based on Google's language-detection library and obtain a two-letter language code.
-Linear regression (OLS) examines the correlation between rating and sentiment/language of the beer's name. Preliminary findings indicate a significantly positive correlation (1% confidence level) in English - Positive sentiment in English names corresponds to higher user ratings. We'll also run some robust tests, focus on the composition of the rating and review text.
+For sentiment analysis, we employ Hugging Face's transformers library with a pre-trained distilbert-base-uncased-finetuned-sst-2-english model. To identify language, we use the langdetect library based on Google's language-detection library.
+Linear regression (OLS) examines a significantly positive correlation (1% confidence level) in English names — positive sentiment leads to higher user ratings. a significantly positive correlation (1% confidence level) in English names—positive sentiment leads to higher user ratings. 
 
 ### Task 3: Beer style similarities
 Calculating the "distance" between different beer styles based on their textual descriptions involves using text similarity measures that can quantify how close or different the descriptions are. Tools like Word2Vec or GloVe convert words into high-dimensional vectors in such a way that semantically similar words are closer in the vector space. You can convert the whole text into a vector by taking the average of all word vectors in the text and then use cosine similarity to find distances between text vectors. In Python, we can use library gensim for Word2Vec to compute these distances.
