@@ -8,7 +8,6 @@ This project takes a deep dive into beer popularity and user taste preferences u
 - How to build a mini-recommendation system based on our data analysis and graph network modeling?
   
 ## Data
-### Data Selection: matched beer data from the two website
 Our dataset, featuring 6,084 breweries and 45,640 beers from BeerAdvocate and RateBeer, includes over 1.2 million ratings. A 20-rating threshold refines this extensive dataset, optimizing processing speed and focusing on frequently reviewed beers. The matched data from both platforms ensures cross-platform consistency, enhancing our model's reliability and quality, making it ideal for developing a beer recommendation system.[^1]
 
 In data preprocessing, we chose pre-processed files (beers.csv, breweries.csv, ratings.csv, users_approx.csv) over the complete dataset for efficiency. Our data, predominantly from U.S. breweries, mainly features American-style beers, with American IPA being the most common at 12.15%. Similar data distributions on BeerRate and BeerAdvocate encourage exploration of feature relationships.
