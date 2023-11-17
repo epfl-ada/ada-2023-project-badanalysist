@@ -51,6 +51,8 @@ Beers will be ranked by popularity, both globally and regionally, using review c
 
 
 
+
+
 ## Timeline
 **16.11.2023** Data Handling and Preprocessing & Initial Exploratory Data Analysis
 
