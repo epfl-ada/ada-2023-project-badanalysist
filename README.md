@@ -42,9 +42,15 @@ We plan to leverage our comprehensive beer dataset to construct a graph network 
 <div align=center><img style="margin: 0 auto;" src ="https://github.com/epfl-ada/ada-2023-project-badanalysist/blob/main/img/graph%20network%20modeling.png" width="40%" height="40%"></div>
 
 ### Task 5: Recommendation Function
-We aim to develop an comprehensive beer recommendation tool, utilizing data from beer review platforms. This tool, ideal for users with limited beer knowledge, will offer suggestions based on various factors including popularity, ABV, and qualitative attributes like taste. Furthermore, our initial data analysis suggests regional variations in beer preferences. This insight enables us to provide tailored recommendations that cater to both local tastes and those of tourists seeking regional specialties
+We're creating a beer recommendation tool that utilizes beer review platform data, ideal for users with limited knowledge of beers. We plan to offer suggestions based on both basic criteria such as style, brewery, ABV, and also more comprehensive factors such as popularity and qualitative attributes like taste. Our initial analysis of regional beer preferences also inspires tailored recommendations catering both locals and exotic tourists.
 
-Using NLP libraries such as nltk, we can extract descriptive keywords from reviews, enhancing our recommendations and enabling visualizations like WordClouds for an intuitive understanding of each beer. We'll also incorporate regional personalization by analyzing beer popularity and ratings across major global regions. Additionally, we plan to add a "you might also like" feature which suggests beers based on style similarities analyzed by task 3. The current recommendation function demonstrates the capability to suggest based on keywords and regions, with further criteria to be added in subsequent phases.
+Beers will be ranked by popularity, both globally and regionally, using review counts and ratings, and labeled with key features. Using NLP tools like nltk, we'll extract keywords from reviews for enhanced recommendations and intuitive WordCloud visualizations. Additionally, a "you might also like" feature will suggest beers based on style similarities. The current function suggests beers based on keywords and regions, with more criteria to be added later.
+
+
+
+
+
+
 
 
 ## Timeline
