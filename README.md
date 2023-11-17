@@ -63,6 +63,7 @@ Using NLP libraries such as nltk, we can extract descriptive keywords from revie
 - Zhixun: task 2
 - Xinyi: task 3 & 4
 - Yihan: task 5
+
 Each team member will be responsible for creating the final visualizations for their respective task, completing the data story.
 
 ## Questions for TAs
