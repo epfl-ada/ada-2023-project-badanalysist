@@ -9,16 +9,11 @@ This project takes a deep dive into beer popularity and user taste preferences u
   
 ## Data
 ### Data Selection: matched beer data from the two website
-Our dataset, encompassing 6,084 breweries and 45,640 beers from BeerAdvocate and RateBeer, is extensive and manageable for analysis.[^1] It includes over 1.2 million ratings, ensuring robustness for a sophisticated recommendation system and machine learning applications.[^1] Implementing a 20-rating threshold refines the dataset, enhancing processing speed and focusing on frequently reviewed beers.[^1] The matched data approach, combining ratings from both platforms, ensures cross-platform consistency, reducing redundancy and improving the reliability and quality of our predictive models. This comprehensive and consistent dataset is well-suited for developing an effective beer recommendation system.
+Our dataset, featuring 6,084 breweries and 45,640 beers from BeerAdvocate and RateBeer, includes over 1.2 million ratings. A 20-rating threshold refines this extensive dataset, optimizing processing speed and focusing on frequently reviewed beers. The matched data from both platforms ensures cross-platform consistency, enhancing our model's reliability and quality, making it ideal for developing a beer recommendation system.[^1]
 
-### Data Preprocessing
-We initially planned to utilize the full dataset from both websites, converting all text files to CSV for easier handling. Due to the large size making it impractical for GitHub sharing and slow to process, we chose to use the original pre-processed matched data: beers.csv, breweries.csv, ratings.csv, and users_approx.csv. These files are adequate and clear for our needs, requiring no additional preprocessing.
+In data preprocessing, we chose pre-processed files (beers.csv, breweries.csv, ratings.csv, users_approx.csv) over the complete dataset for efficiency. Our data, predominantly from U.S. breweries, mainly features American-style beers, with American IPA being the most common at 12.15%. Similar data distributions on BeerRate and BeerAdvocate encourage exploration of feature relationships.
 
-### Data Description 
-The majority of our users and breweries are from the United States, hence the predominance of American-style beer products, with American IPA having the highest proportion at 12.15%. After scaling, the distributions on BeerRate and BeerAdvocate are very similar. Therefore, we will attempt to explore the connections across the features. 
-
-### Additional Data
-We want to find similarities among beer styles, so we found additional data to describe how to define each style in our dataset on the beer association website.[^2] We use a web crawler to get style descriptions to enrich beer style definitions. In our additional dataset, each style is explained by color, clarity, Perceived Malt Aroma & Flavor, Perceived Hop Aroma & Flavor, Perceived Bitterness and Fermentation Characteristics. By examining the different dimensions of these beers, we can distinguish and understand the various beer styles more comprehensively and in greater detail, and identify their similarities.
+Additionally, we enriched our beer style descriptions using a web crawler to extract data from a beer association website. This extra data, detailing aspects like color, aroma, bitterness, and fermentation characteristics, aids in comprehensively understanding and differentiating beer styles.
 
 ## Project plans & methods
 ### Task 1: Clustering for Popularity and User Taste Preference
