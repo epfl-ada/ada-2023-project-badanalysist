@@ -47,9 +47,6 @@ We aim to develop an comprehensive beer recommendation tool, utilizing data from
 Using NLP libraries such as nltk, we can extract descriptive keywords from reviews, enhancing our recommendations and enabling visualizations like WordClouds for an intuitive understanding of each beer. We'll also incorporate regional personalization by analyzing beer popularity and ratings across major global regions. Additionally, we plan to add a "you might also like" feature which suggests beers based on style similarities analyzed by task 3. The current recommendation function demonstrates the capability to suggest based on keywords and regions, with further criteria to be added in subsequent phases.
 
 
-
-
-
 ## Timeline
 **16.11.2023** Data Handling and Preprocessing & Initial Exploratory Data Analysis
 
@@ -62,6 +59,11 @@ Using NLP libraries such as nltk, we can extract descriptive keywords from revie
 **22.12.2023** Milestone 3 Deadline
 
 ## Team Organization
+- Siyuan: task 1
+- Zhixun: task 2
+- Xinyi: task 3 & 4
+- Yihan: task 5
+Each team member will be responsible for creating the final visualizations for their respective task, completing the data story.
 
 ## Questions for TAs
 TBC
