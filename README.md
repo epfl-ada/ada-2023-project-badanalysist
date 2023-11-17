@@ -46,13 +46,6 @@ We're creating a beer recommendation tool that utilizes beer review platform dat
 
 Beers will be ranked by popularity, both globally and regionally, using review counts and ratings, and labeled with key features. Using NLP tools like nltk, we'll extract keywords from reviews for enhanced recommendations and intuitive WordCloud visualizations. Additionally, a "you might also like" feature will suggest beers based on style similarities. The current function suggests beers based on keywords and regions, with more criteria to be added later.
 
-
-
-
-
-
-
-
 ## Timeline
 **16.11.2023** Data Handling and Preprocessing & Initial Exploratory Data Analysis
 
