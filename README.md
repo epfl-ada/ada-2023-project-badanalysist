@@ -21,11 +21,11 @@ The majority of our users and breweries are from the United States, hence the pr
 ### Additional Data
 We want to found similarities among beer styles, so we found additional data to describe how to define each style in our dataset in beer association website.[^2] We use web crawler to get styles description to enrich beer style definitions. In our additional dataset, each style is explained by color, clarity, Perceived Malt Aroma & Flavor, Perceived Hop Aroma & Flavor, Perceived Bitterness and Fermentation Characteristics. By examining the different dimensions of these beers, we can distinguish and understand the various beer styles more comprehensively and in greater detail, and identify their similarities.
 
-## Project plans
+## Project plans & methods
 ### Task 1: Clustering for Popularity and User Taste Preference
 In our initial analysis of the rating dataset, we have identified key attributes such as taste, palate, aroma, appearance, and abv (alcohol by volume), and aim to explore their interrelations and impact on the overall rating. Our preliminary ridge regression model reveals that these five attributes explain the overall rating in a great extent (R^2 = 0.76) in the test set.
 
-To systematically examine the characteristics of beers, we plan to integrate k-means clustering with regression analysis. This approach involves selecting an optimal number of clusters (k) based on the overall performance of regression, allowing us to categorize beers into distinct clusters. We will then investigate the contribution of each cluster’s attributes on their overall ratings, as well as regional preferences for different beer categories. The insights gleaned from this analysis will not only facilitate targeted recommendations for customers in various regions but also guide breweries in enhancing the appeal of their beers.
+We plan to use k-means clustering integrated with regression analysis to categorize beers based on these attributes and assess their impact on ratings and regional preferences. This approach will inform targeted customer recommendations and help breweries improve their products' appeal.
 
 ### Task 2: Beer Name Reflect Beer Flavor
 Do beer names like "Tokyo" influence users' focus on oriental spices like coriander in the aroma? Beer names, ranging from descriptive "Co-op Wheat Beer" to creative ones like "Just Married," vary in style and language, such as English and Hungarian. We explore how a beer's name, with its emotional tone and language, may impact reviews.
