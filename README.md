@@ -2,7 +2,7 @@
 ## Abstract
 This project takes a deep dive into beer popularity and user taste preferences using datasets from BeerAdvocate and RateBeer, aiming to understand beer popularity, naming influence, and style similarities. Aiming at key issues such as user taste preferences and the impact of beer names on ratings, the study used methods such as k-means clustering, sentiment analysis, and graph network modeling. The data set consists of 732,000 BeerAdvocate and 542,000 RateBeer ratings, enriched with additional data to provide a comprehensive beer style definition. Tasks include clustering to identify regional preferences, analyzing sentiment and language in beer names, exploring textual similarities between beer styles, building graph network models, and developing personalized recommendation systems. The project combines statistical methods with NLP techniques to provide a multifaceted view of the beer landscape. The findings are intended to provide guidance to breweries and tailor recommendations to users, taking into account not only popularity but also quality attributes and regional differences in beer preferences.
 
-## Research questions
+## Research Questions
 - How can we know beers' popularity and user taste preference according to ratings? Do beer styles share similarities?
 - Does the style and language of a beer's name have an impact on its rating and the sentiments expressed in its review text?
 - How to build a mini-recommendation system based on our data analysis and graph network modeling?
@@ -14,7 +14,7 @@ In data preprocessing, we chose pre-processed files (beers.csv, breweries.csv, r
 
 Additionally, we enriched our beer style descriptions using a web crawler to extract data from a beer association website. This extra data, detailing aspects like color, aroma, bitterness, and fermentation characteristics, aids in comprehensively understanding and differentiating beer styles.[^2]
 
-## Project plans & methods
+## Project Plans & Methods
 ### Task 1: Clustering for Popularity and User Taste Preference
 In our initial analysis of the rating dataset, we have identified key attributes such as taste, palate, aroma, appearance, and abv (alcohol by volume), and aim to explore their interrelations and impact on the overall rating. Our preliminary ridge regression model reveals that these five attributes explain the overall rating to a great extent (R^2 = 0.76) in the test set.
 
