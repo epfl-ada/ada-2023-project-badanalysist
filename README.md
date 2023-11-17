@@ -12,7 +12,7 @@ Our dataset, featuring 6,084 breweries and 45,640 beers from BeerAdvocate and Ra
 
 In data preprocessing, we chose pre-processed files (beers.csv, breweries.csv, ratings.csv, users_approx.csv) over the complete dataset for efficiency. Our data, predominantly from U.S. breweries, mainly features American-style beers, with American IPA being the most common at 12.15%. Similar data distributions on BeerRate and BeerAdvocate encourage exploration of feature relationships.
 
-Additionally, we enriched our beer style descriptions using a web crawler to extract data from a beer association website. This extra data, detailing aspects like color, aroma, bitterness, and fermentation characteristics, aids in comprehensively understanding and differentiating beer styles.
+Additionally, we enriched our beer style descriptions using a web crawler to extract data from a beer association website. This extra data, detailing aspects like color, aroma, bitterness, and fermentation characteristics, aids in comprehensively understanding and differentiating beer styles.[^2]
 
 ## Project plans & methods
 ### Task 1: Clustering for Popularity and User Taste Preference
