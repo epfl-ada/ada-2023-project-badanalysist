@@ -26,7 +26,7 @@ Do beer names like "Tokyo" influence users' focus on oriental spices like corian
 For sentiment analysis, we employ Hugging Face's transformers library with a pre-trained distilbert-base-uncased-finetuned-sst-2-english model. To identify language, we use the langdetect library based on Google's language-detection library.
 OLS regression finds a significant positive correlation (1% confidence level) in English names, where positive sentiment leads to higher user ratings. Robust tests will further explore the composition of ratings and review text.
 
-### Task 3: Beer style similarities
+### Task 3: Beer Style Similarities
 Calculating the "distance" between different beer styles based on their textual descriptions involves using text similarity measures that can quantify how close or different the descriptions are. Tools like Word2Vec or GloVe convert words into high-dimensional vectors in such a way that semantically similar words are closer in the vector space. You can convert the whole text into a vector by taking the average of all word vectors in the text and then use cosine similarity to find distances between text vectors. In Python, we can use library gensim for Word2Vec to compute these distances.
 
 ### Task 4: Graph Network Modeling

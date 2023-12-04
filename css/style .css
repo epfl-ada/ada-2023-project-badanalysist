@@ -1,0 +1,132 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Trebuchet MS';
+}
+
+#background-image {
+    width: 100%;
+    height: auto; 
+    display: block; 
+    margin: 0 auto;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.title {
+    position: absolute;
+    top: 4%; 
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #333; 
+    letter-spacing: 1px; 
+    line-height: 1.1; 
+    margin: 0 auto;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+#title {
+    font-size: 56px; 
+    font-weight: bold; 
+    max-width: 720px;
+    word-wrap: break-word;
+    padding-top: 20px; 
+    padding-bottom: 10px; 
+}
+
+.inline-icon {
+    height: 1em; 
+    width: auto; 
+    vertical-align: middle; 
+}
+
+
+#sub-title {
+    font-size: 24px; 
+    font-weight: normal; 
+    opacity: 0.7; 
+    max-width: 640px;
+    word-wrap: break-word;
+    padding-top: calc(56px + 56px + 10px + 40px); 
+}
+
+#names-list {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding-top: calc(56px + 56px + 10px + 40px + 24px + 24px + 25px);
+    position: absolute; 
+    top: 4%; 
+    left: 0; 
+    right: 0;
+    z-index: 1001; 
+}
+
+.name {
+    margin: 0 10px; 
+    font-size: 16px; 
+    color: #333; 
+}
+
+#github-link {
+    position: fixed;
+    top: 10px; 
+    right: 10px; 
+    z-index: 1002;
+}
+
+#github-link img {
+    width: 50px; 
+    height: auto; 
+}
+
+#github-link img:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* 悬浮时的阴影效果 */
+}
+
+/* 当屏幕宽度小于1600像素时 */
+@media (max-width: 1600px) {
+    .title {
+        top: 0px; 
+    }
+    
+    #names-list {
+        top: 0px;
+    }
+}
+
+/* 当屏幕宽度小于1300像素时 */
+@media (max-width: 1300px) {
+    #title {
+        font-size: 36px; 
+        font-weight: bold; 
+        max-width: 500px;
+        word-wrap: break-word;
+        padding-top: 20px; 
+        padding-bottom: 10px; 
+    }
+    
+    #sub-title {
+        font-size: 18px; 
+        font-weight: normal; 
+        opacity: 0.7; 
+        max-width: 500px;
+        word-wrap: break-word;
+        padding-top: calc(36px + 36px + 10px + 25px); 
+    }
+    
+    #names-list {
+        padding-top: calc(36px + 36px + 10px + 25px + 18px + 18px + 20px);
+        top: 0; 
+    }
+    
+    .name {
+        font-size: 12px; 
+    }
+}
