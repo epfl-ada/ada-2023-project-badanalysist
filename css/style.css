@@ -3,24 +3,41 @@ body, html {
     padding: 0;
     overflow-x: hidden;
     font-family: 'Trebuchet MS';
+    height: 100%;
 }
 
 #background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto; 
-    display: block; 
-    margin: 0 auto;
-    z-index: 1;
+    height: 100%;
+    background-size: cover; 
+    z-index: -1; 
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 100%; 
     position: relative;
-    width: 100%;
+    z-index: 2; 
+}
+
+#main-image {
+    position: absolute;
+    z-index: 10;
+    top: 50%; 
+    left: 50%; 
+    width: 75vw;
+    transform: translate(-50%, -25%); 
 }
 
 .title {
     position: absolute;
-    top: 4%; 
+    top: 6%; 
     left: 0;
     right: 0;
     text-align: center;
@@ -62,7 +79,7 @@ body, html {
     align-items: center; 
     padding-top: calc(56px + 56px + 10px + 40px + 24px + 24px + 25px);
     position: absolute; 
-    top: 4%; 
+    top: 6%; 
     left: 0; 
     right: 0;
     z-index: 1001; 
@@ -90,14 +107,31 @@ body, html {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); 
 }
 
+.scroll-prompt {
+    position: absolute;
+    left: 50%; 
+    top: 90vh; 
+    transform: translateX(-50%); 
+    animation: float 2s ease-in-out infinite;
+}
+
+.scroll-prompt p {
+    margin-bottom: 5px; 
+}
+
+.scroll-prompt img {
+    display: block;
+    margin-top: 5px; 
+}
+
 .topic {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; 
     gap: 20px; 
-    padding: 20px; 
+    padding: 30px; 
     position: absolute; 
-    top: 108%;
+    top: 102vh;
     left: 0;
     right: 0;
     z-index: 1000; 
@@ -117,16 +151,13 @@ body, html {
 
 .content {
     display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    /* scrollbar-width: none; */
+    flex-direction: column; 
+    overflow-y: auto; 
     position: absolute;
-    top: calc(108% + 150px); 
+    top: calc(102vh + 200px);
     left: 0;
     right: 0;
-    z-index: 1000;
-    border-top: 2px solid #000000; /* delete after completing */
-    border-bottom: 2px solid #000000; /* delete after completing */
+    z-index: 999;
 }
 
 .content::-webkit-scrollbar {
@@ -134,8 +165,8 @@ body, html {
 }
 
 .content-section {
-    width: 100vw; 
-    height: 70vh; 
+    width: 100%; 
+    height: auto; 
     flex-shrink: 0;
 }
 
@@ -182,5 +213,14 @@ body, html {
     
     .name {
         font-size: 12px; 
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* 上移10像素 */
     }
 }
