@@ -16,7 +16,7 @@ Our dataset, featuring 6,084 breweries and 45,640 beers from BeerAdvocate and Ra
 
 In data preprocessing, we chose pre-processed files (beers.csv, breweries.csv, ratings.csv, users_approx.csv) over the complete dataset for efficiency. Our data, predominantly from U.S. breweries, mainly features American-style beers, with American IPA being the most common at 12.15%. Similar data distributions on BeerRate and BeerAdvocate encourage exploration of feature relationships.
 
-Additionally, we enriched our beer style descriptions using a web crawler to extract data from a beer association website. This extra data, detailing aspects like color, aroma, bitterness, and fermentation characteristics, aids in comprehensively understanding and differentiating beer styles.[^2]
+Additionally, we enriched our beer style descriptions using a web crawler to extract data mainly from a beer association website and a craft beer website. This extra data, detailing aspects like color, aroma, bitterness, and fermentation characteristics, aids in comprehensively understanding and differentiating beer styles.[^2][^3]
 
 ## Project Plans & Methods
 ### Task 1: Clustering for Popularity and User Taste Preference
@@ -68,3 +68,4 @@ TBC
 ## Reference
 [^1]: Lederrey, G., & West, R. (2018, April). When sheep shop: measuring herding effects in product ratings with natural experiments. In Proceedings of the 2018 world wide web conference (pp. 793-802).
 [^2]: 2023 Brewers Association Beer Style Guidelines: https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/#116
+[^3]: Beer Style: https://www.craftbeer.com/beer-styles
