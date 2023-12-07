@@ -6,6 +6,7 @@
     <title>Crafting a Personalized Beer Landscape</title>
     <meta name="description" content="Analyzing User Preferences and Naming Impact for Guiding Targeted Recommendation">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/content.css">
 </head>
 <body>
     <img src="img/bg.png" alt="background image" id="background-image">
@@ -26,37 +27,84 @@
         </a>
         <div class="scroll-prompt"><p>SCROLL</p><img class="scroll-down" src="img/arrow-down.svg"></div>
         <div class="topic">
-            <div class="box">Basic Statistics about Beers</div>
-            <div class="box">Beer Style Similarities</div>
-            <div class="box">Beer Popularity and Taste Preference</div>
-            <div class="box">Beer Name, Beer Flavor</div>
-            <div class="box">Let's Recommend!</div>
+            <div class="box" id="topic1">Basic Statistics</div>
+            <div class="box" id="topic2">Beer Style Similarities</div>
+            <div class="box" id="topic3">Beer Popularity and Taste Preference</div>
+            <div class="box" id="topic4">Beer Name, Beer Flavor</div>
+            <div class="box" id="topic5">Let's Recommend!</div>
         </div> 
-        <script type="text/javascript" src="script/scroll.js"></script> 
-
 
         <!-- Edit Here -->
         <div class="content">
+            <div class="intro" id="section0">
+                <div class="blurb">
+                    <h3 class="slide-header">Introduction</h3>
+                    <p>
+                        Embark on a journey into the secret world of beer with our project! 
+                        Dive deep into the trends and tastes of the beer world as we meticulously interpret vast datasets from BeerAdvocate and RateBeer. 
+                        Our exploration uncovers not just the popularity of beer and the influence of naming on ratings, 
+                        but also delves into the similarities between styles. Utilizing methods like K-means clustering, 
+                        sentiment analysis, and graph network modeling, we analyze over a million beer ratings to comprehensively define beer styles. 
+                        From clustering regional preferences to exploring the sentiment and language in beer names, 
+                        and studying textual similarities between beer styles, 
+                        our project merges statistical methods with natural language processing techniques to offer a multi-faceted view of the beer domain. 
+                        Our findings provide guidance for breweries and tailor recommendations for users, 
+                        considering not just popularity but also quality attributes and regional taste variations. 
+                        Join us on this fascinating journey of beer exploration!
+                    </p>
+                </div>
+            </div>
+
             <!-- Xinyi -->
-            <div class="content-section" id="section1">Basic Statistics about Beers</div>
-            <div class="content-section" id="section2">Beer Style Similarities</div>
+            <div class="content-section" id="section1">
+                <div class="blurb" id="blurb1">
+                    <h3 class="slide-header">Basic Statistics about the Beer Data</h3>
+                    <p>
+                        Our matched dataset, featuring 6,084 breweries and 45,640 beers from BeerAdvocate and RateBeer, includes over 1.2 million ratings. 
+                        A 20-rating threshold refines this extensive dataset, optimizing processing speed and focusing on frequently reviewed beers. 
+                        The matched data from both platforms ensures cross-platform consistency, enhancing our model's reliability and quality, 
+                        making it ideal for developing a beer recommendation system.
+                    </p>
+                </div>
+                <div class="visuliz">
+
+                </div>
+            </div>
+
+            <div class="content-section" id="section2">
+                <div class="blurb" id="blurb2">
+                    <h3 class="slide-header">Beer Style Similarities</h3>
+                    <p>text</p>
+                </div>
+            </div>
             
             <!-- Siyuan -->
-            <div class="content-section" id="section3">Beer Popularity and Taste Preference
-
+            <div class="content-section" id="section3">
+                <div class="blurb" id="blurb3">
+                    <h3 class="slide-header">Beer Popularity and Taste Preference</h3>
+                    <p>text</p>
+                </div>
             </div>
 
             <!-- Zhixun -->
-            <div class="content-section" id="section4">Beer Name, Beer Flavor
-
+            <div class="content-section" id="section4">
+                <div class="blurb" id="blurb4">
+                    <h3 class="slide-header">Beer Name, Beer Flavor</h3>
+                    <p>text</p>
+                </div>
             </div>
 
             <!-- Yihan -->
-            <div class="content-section" id="section5">Let's Recommend!
-
+            <div class="content-section" id="section5">
+                <div class="blurb" id="blurb5">
+                    <h3 class="slide-header">Let's Recommend!</h3>
+                    <p>text</p>
+                </div>
             </div>
         </div>
-        <script type="text/javascript" src="script/scroll.js"></script> 
     </div>
+
+    <script type="text/javascript" src="script/scroll.js"></script> 
+    <script type="text/javascript" src="script/click.js"></script> 
 </body>
 </html>
