@@ -61,7 +61,7 @@ h3 {
     line-height: 1.5;
 }
 
-.visuliz {
+.visualiz {
     position: relative;
     max-width: 56rem;
     margin-bottom: 80vh;
@@ -70,4 +70,11 @@ h3 {
     border-radius: 6px;
     z-index: 5;
     text-align: center;
+}
+ 
+#reco-kg {
+    width: 50rem;
+    height: 43rem;
+    margin-bottom: 8vh;
+    background-color: transparent;
 }
