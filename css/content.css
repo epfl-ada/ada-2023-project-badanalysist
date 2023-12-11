@@ -23,15 +23,34 @@
     overflow-y: auto;
 }
 
-.blurb {
+.intro {
     position: relative;
     max-width: 56rem;
-    margin-bottom: 80vh;
+    /* margin-top: 50vh; */
     padding: 20px;
     background: rgba(253, 254, 247, 0.8);
     border-radius: 6px;
     z-index: 5;
     text-align: center;
+}
+
+.blurb {
+    position: relative;
+    max-width: 55rem;
+    margin-top: 50vh;
+    padding: 20px;
+    background: rgba(253, 254, 247, 0.8);
+    border-radius: 6px;
+    z-index: 5;
+    text-align: center;
+}
+
+.intro p {
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #002e4d;
+    line-height: 1.5;
 }
 
 h3 {
@@ -61,20 +80,44 @@ h3 {
     line-height: 1.5;
 }
 
-.visualiz {
+.analysis {
     position: relative;
-    max-width: 56rem;
-    margin-bottom: 80vh;
+    max-width: 55rem;
+    margin-top: 20px;
     padding: 20px;
-    background: rgba(253, 254, 247, 0.8);
     border-radius: 6px;
     z-index: 5;
-    text-align: center;
+    text-align: left;
 }
- 
+
+.analysis p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #002e4d;
+    /* font-family: freight-book,serif; */
+}
+
+.plotly-chart {
+    width: 56rem;   
+}
+  
+.heatmap-container {
+    display: flex;
+    justify-content: center; 
+    align-items: stretch; 
+  }
+  
+  #heatmap1, #heatmap2 {
+    flex: 1; 
+    margin: 10px; 
+  }
+
 #reco-kg {
+    position: relative;
     width: 50rem;
     height: 43rem;
     margin-bottom: 8vh;
     background-color: transparent;
+    z-index: 5;
+    text-align: center;
 }
