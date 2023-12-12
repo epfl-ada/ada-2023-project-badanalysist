@@ -26,7 +26,7 @@
 .intro {
     position: relative;
     max-width: 56rem;
-    /* margin-top: 50vh; */
+    margin-top: 50vh;
     padding: 20px;
     background: rgba(253, 254, 247, 0.8);
     border-radius: 6px;
@@ -37,7 +37,7 @@
 .blurb {
     position: relative;
     max-width: 55rem;
-    margin-top: 50vh;
+    margin-top: 70vh;
     padding: 20px;
     background: rgba(253, 254, 247, 0.8);
     border-radius: 6px;
@@ -90,11 +90,14 @@ h3 {
     text-align: left;
 }
 
-.analysis p {
+.analysis p, .analysis ul, .analysis ul li {
     font-size: 1.2rem;
     line-height: 1.5;
     color: #002e4d;
-    /* font-family: freight-book,serif; */
+}
+.analysis h4 {
+    font-size: 1.3rem;
+    color: #002e4d;
 }
 
 .plotly-chart {

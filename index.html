@@ -10,6 +10,11 @@
     <script src="script/echarts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+    <style>
+        .spacing {
+          height: 50px;
+        }
+    </style>
 </head>
 <body>
     <img src="img/bg.png" alt="background image" id="background-image">
@@ -68,18 +73,51 @@
                     </p>
                 </div>
                 <div class="analysis">
+                    <h4>Distribution comparison of rating features between two websites</h4>
                     <p>
-                        text
+                        The histogram charts presented appear to compare the distribution of beer ratings between two websites: RateBeer and BeerAdvocate. 
+                        The data has been cleaned to remove all NaN values and then standardized using min-max scaling to ensure comparability across different rating scales. 
+                        The histograms are divided into five categories: alcohol by volume (abv), appearance, aroma, palate, and taste.
+                        From a visual analysis, we can see that the general trends between RateBeer and BeerAdvocate are similar, 
+                        suggesting a level of agreement in the ratings of the matched data provided by users on both platforms.
+                        The most notable patterns are:
                     </p>
+                    <ul>
+                        <li><b>ABV:</b> The distribution for ABV appears to be left-skewed for both RateBeer and BeerAdvocate, indicating that most beers have a lower alcohol content.</li>
+                        <li><b>Appearance:</b> Both sites show a high frequency of beers with higher appearance ratings, with a sharp peak at the high end of the scale.</li>
+                        <li><b>Aroma:</b> The distributions for aroma ratings are quite similar between the two sites, with a slight right skew, suggesting that users generally rate the aroma of beers positively.</li>
+                        <li><b>Palate:</b> The palate ratings show a more varied distribution, with RateBeer displaying a bimodal distribution, suggesting two common ratings at which beers are evaluated, whereas BeerAdvocate's distribution is more right-skewed.</li>
+                        <li><b>Taste:</b> Taste ratings are crucial, and here both sites show a right-skewed distribution, indicating a tendency towards higher ratings for taste.</li>
+                    </ul>
                     <div id="rate-dist" class="plotly-chart"></div>
+                    <div class="spacing"></div>
 
+                    <h4>Beer feature and score correlations of the two websites</h4>
+                    <p>For RateBeer:</p>
+                    <ul>
+                        <li>There is a moderate to strong positive correlation between taste and aroma, which is the highest correlation observed (0.74).</li>
+                        <li>Appearance has a moderate positive correlation with palate (0.44) and taste (0.40).</li>
+                        <li>ABV has the lowest correlations with other features, suggesting that the alcohol content does not strongly influence how users rate the other attributes of the beer.</li>
+                    </ul>
+                    <p>For BeerAdvocate:</p>
+                    <ul>
+                        <li>The correlations are generally higher compared to RateBeer, indicating a stronger relationship between the features on this platform.</li>
+                        <li>Taste and aroma again have a strong positive correlation (0.76), which is consistent with RateBeer's ratings.</li>
+                        <li>Appearance has a strong correlation with both palate (0.56) and taste (0.52), which is somewhat stronger than on RateBeer.</li>
+                    </ul>
                     <p>
-                        text
+                        Overall, this heatmap suggests that certain attributes of beer, such as taste and aroma, 
+                        are consistently perceived as related by users of both RateBeer and BeerAdvocate. 
+                        The strength of the correlations varies slightly between the two platforms, but the general pattern remains the same, 
+                        indicating similar rating behaviors among the users. 
+                        This information can be particularly useful for brewers and marketers to understand what characteristics of beer are 
+                        most influential in consumer ratings and perception.
                     </p>
                     <div class="heatmap-container">
                         <div id="heatmap1"></div>
                         <div id="heatmap2"></div>
                     </div>
+                    <div class="spacing"></div>
 
                     <p>
                         text
@@ -94,8 +132,10 @@
                     <h3 class="slide-header">Beer Style Similarities</h3>
                     <p>text</p>
                 </div>
-                <p>text</p>
-                <div id="similarity-heatmap" class="plotly-chart"></div>
+                <div class="analysis">
+                    <p>text</p>
+                    <div id="similarity-heatmap" class="plotly-chart"></div>
+                </div>
             </div>
             
             <!-- Siyuan -->
@@ -120,8 +160,10 @@
                     <h3 class="slide-header">Let's Recommend!</h3>
                     <p>text</p>
                 </div>
-                <p>text</p>
-                <div class="visualiz"  id="reco-kg"></div>
+                <div class="analysis">
+                    <p>text</p>
+                    <div class="visualiz"  id="reco-kg"></div>
+                </div>
             </div>
         </div>
     </div>

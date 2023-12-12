@@ -12,7 +12,7 @@ fetch('viz_data/ratings_rb_corr.json').then(res => res.json()).then(ratingsRbCor
   };
 
   let layout = {
-    title: 'RB Rating Features Correlation Heatmap',
+    title: 'RateBeer Correlation Heatmap',
     paper_bgcolor: 'transparent',
     plot_bgcolor: 'transparent',
     xaxis: {
