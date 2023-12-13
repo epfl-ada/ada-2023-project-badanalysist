@@ -171,30 +171,33 @@
                         <br>
                         The selection of these dimensions to describe beer styles is deliberate, as they represent key aspects of a beer's sensory and chemical properties, 
                         which typically influence consumer preferences and choices. Among these, Alcohol_ABV, Bitterness_IBU, and Color_SRM are specific numerical ranges, 
-                        while the others are textual descriptions. For the textual parts, we compute similarity using word2vec to quantify the likeness between descriptors. 
+                        while the others are textual descriptions. For the numarical ranges, we combine its mean value and its ranges to calculate similarities. 
+                        For the textual parts, we compute similarity using word2vec to quantify the likeness between descriptors. 
                         Finally, we combine the numerical values and textual vectors to represent the flavor profile of a beer style.
                         <br>
                         <br>
                     </p>
-                    <h4>Analysis for the subset beer style similarities</h4>
+                    <h4>Table for a subset beer style similarities</h4>
+                    <p>In the dataset, there are 104 beer styles. Here we select 5 beer styles to analyze the similarity results</p>
+                    <div id="similarity-table" class="plotly-chart"></div>
+                    <h4>Analysis for a subset beer style similarities</h4>
                     <p>
-                        <b>English Brown Ale and American Brown Ale</b> have a very high similarity score (0.99), reflecting their closely related color ranges (12-17 SRM for English, 
-                        15-26 SRM for American), bitterness (15-25 IBU for English, 25-45 IBU for American), and alcohol content (4-5.5% ABV for English, 4.2-6.3% ABV for American). 
-                        Both have clear clarity, and their flavor profiles are similar, focusing on maltiness with toffee, nuts, and caramel notes for English Brown Ale, 
-                        and adding chocolate and toast notes for American Brown Ale. The hop aroma and bitterness are low for English Brown Ale, 
-                        \while the American Brown Ale has medium hop aroma and higher bitterness.
+                        <b>English Brown Ale and American Brown Ale</b> show the highest similarity (0.99), 
+                        which is consistent with their close characteristics in terms of color (SRM values are overlapping), 
+                        alcohol content (ABV), and malt flavor profiles, 
+                        even though the American Brown Ale tends to have a higher bitterness (IBU) and more varied body.
                         <br>
                         <br>
-                        <b>Smoked Beer</b> stands out with low similarity scores compared to the others (e.g., 0.55 with English Brown Ale), due to its broad range in color (1-100 SRM), 
-                        bitterness (1-120 IBU), and alcohol content (0-15% ABV), as well as varying sensory descriptors that are not as narrowly defined as the other styles.
+                        <b>Smoked Beer</b> is markedly different from the other beer styles, as indicated by its lower similarity scores across the board (e.g., 0.55 with English Brown Ale). 
+                        This is due to its broad range in every category, particularly the color (1-100 SRM) and bitterness (1-120 IBU), and the fact that the other sensory characteristics are variable.
                         <br>
                         <br>
-                        <b>American Pale Lager</b> shows a moderate similarity to American IPA (0.87) and lower to the Brown Ales (0.89 with American Brown Ale), 
-                        which can be attributed to the overlap in alcohol content and some sensory characteristics despite different color (2-4 SRM) and a more grainy flavor profile.
+                        <b>American Pale Lager</b> has moderate similarity with the American IPA (0.87) despite having a much lighter color (2-4 SRM compared to 6-12 SRM) and lower bitterness (5-19 IBU compared to 50-70 IBU). 
+                        It shares a similar range of alcohol content with the IPAs, which may account for some of the similarity.
                         <br>
                         <br>
-                        <b>American IPA</b>exhibits high similarity with the Brown Ales (0.97 with English Brown Ale), likely due to the overlap in alcohol content (6.3-7.5% ABV) and color (6-12 SRM), 
-                        despite having a very distinct hop profile with high aroma and strong bitterness (50-70 IBU).
+                        <b>American IPA</b> shows high similarity with the American Brown Ale (0.98), likely due to shared hop flavor characteristics and a similar range in alcohol content. 
+                        However, the American IPA is distinct in its higher bitterness and the specific hop flavors it presents, such as floral, citrus-like, and piney notes, which contribute to its uniqueness.
                     </p>
                     <div id="similarity-heatmap" class="plotly-chart"></div>
                 </div>
@@ -237,6 +240,7 @@
     <script type="text/javascript" src="script/rate-heatmap1.js"></script>
     <script type="text/javascript" src="script/rate-heatmap2.js"></script>
     <script type="text/javascript" src="script/style-pgt.js"></script>
+    <script type="text/javascript" src="script/similarity-table.js"></script>
     <script type="text/javascript" src="script/similarity-heatmap.js"></script>
     <script type="text/javascript" src="script/user_brewery_location.js"></script>
 </body>

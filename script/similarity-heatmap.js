@@ -1,13 +1,13 @@
 var xValues = ['English Brown Ale', 'American Brown Ale', 'Smoked Beer', 'American Pale Lager', 'American IPA'];
 
-var yValues = ['English Brown Ale', 'American Brown Ale', 'Smoked Beer', 'American Pale Lager', 'American IPA'];
+var yValues = ['English Brown Ale', 'American Brown Ale', 'Smoked Beer', 'American Pale Lager', 'American IPA'].reverse();
 
 var zValues = [
-  [1.00, 0.99, 0.55, 0.89, 0.97],
-  [0.99, 1.00,  0.56, 0.89, 0.98],
-  [0.55,  0.56, 1.00, 0.42, 0.52],
-  [0.89, 0.89, 0.42, 1.00, 0.87],
-  [0.97, 0.98, 0.52, 0.87, 1.00]
+  [1.00, 0.99, 0.55, 0.89, 0.97].reverse(),
+  [0.99, 1.00,  0.56, 0.89, 0.98].reverse(),
+  [0.55,  0.56, 1.00, 0.42, 0.52].reverse(),
+  [0.89, 0.89, 0.42, 1.00, 0.87].reverse(),
+  [0.97, 0.98, 0.52, 0.87, 1.00].reverse()
 ];
 
 var data = [{
@@ -52,8 +52,8 @@ for ( var i = 0; i < yValues.length; i++ ) {
     var result = {
       xref: 'x1',
       yref: 'y1',
-      x: xValues[j],
-      y: yValues[i],
+      x: xValues[i],
+      y: yValues[j],
       text: zValues[i][j],
       font: {
         family: 'Arial',
