@@ -1,6 +1,6 @@
-var xValues = ['English Brown Ale', 'Brown Ale', 'Smoked Beer', 'American Pale Lager', 'American IPA'];
+var xValues = ['English Brown Ale', 'American Brown Ale', 'Smoked Beer', 'American Pale Lager', 'American IPA'];
 
-var yValues = ['English Brown Ale', 'Brown Ale', 'Smoked Beer', 'American Pale Lager', 'American IPA'];
+var yValues = ['English Brown Ale', 'American Brown Ale', 'Smoked Beer', 'American Pale Lager', 'American IPA'];
 
 var zValues = [
   [1.00, 0.99, 0.55, 0.89, 0.97],
@@ -20,7 +20,7 @@ var data = [{
 }];
 
 var layout = {
-  title: 'Example Heatmap about Beer Sytle Similarities',
+  title: 'An Example Heatmap about Beer Sytle Similarities',
   paper_bgcolor: 'transparent',
   plot_bgcolor: 'transparent',
   annotations: [],

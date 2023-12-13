@@ -119,10 +119,39 @@
                     </div>
                     <div class="spacing"></div>
 
+                    <h4>Percentages about beer styles</h4>
                     <p>
-                        text
+                        The pie chart visualizes the popularity of various beer styles within our dataset, which includes 104 different styles. The pie chart lists first twelve beer styles which take up most of percentage in the dataset.
+                        "American IPA" is the most popular listed style, making up 12.1% of the dataset. This suggests that it's a prevalent style among beer varieties in your dataset.
+                        The next three styles in descending order of popularity are "American Pale Ale (APA)" at 6.77%, "Saison / Farmhouse Ale" at 5.89%, and "American Double / Imperial IPA" at 4.99%. 
+                        These styles are evidently popular and significantly represented. The smaller slices, such as "Belgian Pale Ale" at 1.88%, indicate less common styles within the dataset
+                        <br>
+                        <br>
+                        It's important to note that while a smaller percentage does not necessarily mean a style is unpopular globally, it does reflect its frequency within this specific collection of data. 
+                        The pie chart effectively highlights the diversity within the beer styles and indicates which styles are most commonly represented in our dataset. 
+                        This can be useful for understanding consumer preferences, production trends, or for making decisions about what beers to feature if the dataset reflects a particular market or beer selection.
                     </p>
                     <div id="style-pgt" class="plotly-chart"></div>
+                    <div class="spacing"></div>
+
+                    <h4>Locations of Users and Breweries</h4>
+                    <p>
+                        There are 61 countries besides US in the dataset. There are 658 users and 4,323 breweries located outside of the United States. 
+                        This indicates a significantly higher number of breweries compared to the number of users in these regions. 
+                        It suggests that while there is a substantial brewing industry outside the US, the user base (who might be rating or using the dataset) is smaller in number.
+                        <br>
+                        <br>
+                        There are 2,683 users and 3,958 breweries located in the United States. The number of users is considerably higher in the US compared to non-US countries. 
+                        Additionally, the number of breweries in the US is slightly lower than in non-US countries. 
+                        This could reflect a higher engagement level with the beer rating or dataset usage among US users, 
+                        or it could indicate a more significant interest in the diverse range of beer styles available in the US.
+                        <br>
+                        <br>
+                        The data reflects a robust international brewing industry, yet user engagement with this dataset is more pronounced in the US. 
+                        This higher activity among American users could explain the predominance of American beer styles in the data. 
+                        Although the number of breweries is comparable in the US and non-US countries, the user distribution suggests a dataset potentially skewed towards a US-centric audience.
+                    </p>
+                    <div id="user-brewery-location" class="plotly-chart"></div>
                 </div>
             </div>
 
@@ -130,10 +159,43 @@
             <div class="content-section" id="section2">
                 <div class="blurb" id="blurb2">
                     <h3 class="slide-header">Beer Style Similarities</h3>
-                    <p>text</p>
+                    <p>Calculating the "distance" between different beer styles based on their textual descriptions involves using text similarity measures that can quantify how close or different the descriptions are.</p>
                 </div>
                 <div class="analysis">
-                    <p>text</p>
+                    <p>
+                        We intend to calculate the similarity between beer styles, which are relatively abstract and not indicative of specific flavors. 
+                        To address this, we have sourced detailed descriptions of beer characteristics from other websites. These descriptions cover the following aspects: 
+                        Color, Clarity, Perceived Malt Aroma & Flavor, Perceived Hop Aroma & Flavor, Perceived Bitterness, Fermentation Characteristics, Body, Alcohol by Volume (ABV), 
+                        International Bitterness Units (IBU), and Standard Reference Method (SRM) for color.
+                        <br>
+                        <br>
+                        The selection of these dimensions to describe beer styles is deliberate, as they represent key aspects of a beer's sensory and chemical properties, 
+                        which typically influence consumer preferences and choices. Among these, Alcohol_ABV, Bitterness_IBU, and Color_SRM are specific numerical ranges, 
+                        while the others are textual descriptions. For the textual parts, we compute similarity using word2vec to quantify the likeness between descriptors. 
+                        Finally, we combine the numerical values and textual vectors to represent the flavor profile of a beer style.
+                        <br>
+                        <br>
+                    </p>
+                    <h4>Analysis for the subset beer style similarities</h4>
+                    <p>
+                        <b>English Brown Ale and American Brown Ale</b> have a very high similarity score (0.99), reflecting their closely related color ranges (12-17 SRM for English, 
+                        15-26 SRM for American), bitterness (15-25 IBU for English, 25-45 IBU for American), and alcohol content (4-5.5% ABV for English, 4.2-6.3% ABV for American). 
+                        Both have clear clarity, and their flavor profiles are similar, focusing on maltiness with toffee, nuts, and caramel notes for English Brown Ale, 
+                        and adding chocolate and toast notes for American Brown Ale. The hop aroma and bitterness are low for English Brown Ale, 
+                        \while the American Brown Ale has medium hop aroma and higher bitterness.
+                        <br>
+                        <br>
+                        <b>Smoked Beer</b> stands out with low similarity scores compared to the others (e.g., 0.55 with English Brown Ale), due to its broad range in color (1-100 SRM), 
+                        bitterness (1-120 IBU), and alcohol content (0-15% ABV), as well as varying sensory descriptors that are not as narrowly defined as the other styles.
+                        <br>
+                        <br>
+                        <b>American Pale Lager</b> shows a moderate similarity to American IPA (0.87) and lower to the Brown Ales (0.89 with American Brown Ale), 
+                        which can be attributed to the overlap in alcohol content and some sensory characteristics despite different color (2-4 SRM) and a more grainy flavor profile.
+                        <br>
+                        <br>
+                        <b>American IPA</b>exhibits high similarity with the Brown Ales (0.97 with English Brown Ale), likely due to the overlap in alcohol content (6.3-7.5% ABV) and color (6-12 SRM), 
+                        despite having a very distinct hop profile with high aroma and strong bitterness (50-70 IBU).
+                    </p>
                     <div id="similarity-heatmap" class="plotly-chart"></div>
                 </div>
             </div>
@@ -176,5 +238,6 @@
     <script type="text/javascript" src="script/rate-heatmap2.js"></script>
     <script type="text/javascript" src="script/style-pgt.js"></script>
     <script type="text/javascript" src="script/similarity-heatmap.js"></script>
+    <script type="text/javascript" src="script/user_brewery_location.js"></script>
 </body>
 </html>
