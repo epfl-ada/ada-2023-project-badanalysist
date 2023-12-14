@@ -62,7 +62,9 @@ function createMap(regions) {
         text: regions.map(region => region.hover_text),
         hoverinfo: 'text',
         marker: {
-            size: 10
+            size: [182, 2, 15, 28, 3, 1, 1],
+            color: [0.67, 2.1, 0.255, 0.547, 5.4, 1.1, 100 ],
+            colorscale: 'Portland',
         }
     }];
 
@@ -70,7 +72,7 @@ function createMap(regions) {
         title: 'Beer Preferences by Region',
         geo: {
             projection: {
-                type: 'natural earth'
+                type: 'orthographic'
             },
             bgcolor: 'transparent'
         },
