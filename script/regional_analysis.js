@@ -77,9 +77,9 @@ function createMap(regions) {
             },
             bgcolor: 'transparent',
             showland: true,
-            landcolor: '#FEDD00',
+            landcolor: '#FDF2CD',
             showocean: true,
-            oceancolor: '#CDEDFD'
+            oceancolor: '#CDE1FD'
         },
         paper_bgcolor: 'transparent', 
         plot_bgcolor: 'transparent', 
