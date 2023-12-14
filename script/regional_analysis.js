@@ -63,7 +63,7 @@ function createMap(regions) {
         hoverinfo: 'text',
         marker: {
             size: [82, 8, 15, 28, 10, 6, 6],
-            color: [2, 3, 1, 1.1, 5, 1.5, 7 ],
+            color: [20, 30, 10, 15, 50, 20, 70 ],
             colorscale: 'Blues',
         }
     }];
@@ -76,7 +76,7 @@ function createMap(regions) {
             },
             bgcolor: 'transparent',
             showland: true,
-            landcolor: '#EAEAAE',
+            landcolor: '#FEDD00',
             showocean: true,
             oceancolor: '#CDEDFD'
         },
