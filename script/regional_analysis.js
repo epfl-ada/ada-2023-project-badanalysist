@@ -64,7 +64,7 @@ function createMap(regions) {
         marker: {
             size: [82, 2, 15, 28, 3, 1, 1],
             color: [0.67, 2.1, 0.255, 0.547, 5.4, 1.1, 100 ],
-            colorscale: 'Oranges',
+            colorscale: 'Greens',
         }
     }];
 
@@ -74,7 +74,9 @@ function createMap(regions) {
             projection: {
                 type: 'natural earth'
             },
-            bgcolor: 'transparent'
+            bgcolor: 'transparent',
+            landcolor: '#EAEAAE',  
+            watercolor: '#CDEDFD', 
         },
         paper_bgcolor: 'transparent', 
         plot_bgcolor: 'transparent', 
