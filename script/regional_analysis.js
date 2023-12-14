@@ -62,8 +62,8 @@ function createMap(regions) {
         text: regions.map(region => region.hover_text),
         hoverinfo: 'text',
         marker: {
-            size: [82, 8, 15, 28, 10, 4, 4],
-            color: [0.67, 2.1, 0.255, 0.547, 5.4, 1.1, 100 ],
+            size: [82, 8, 15, 28, 10, 6, 6],
+            color: [2, 3, 1, 1.1, 5, 1.5, 7 ],
             colorscale: 'Blues',
         }
     }];
