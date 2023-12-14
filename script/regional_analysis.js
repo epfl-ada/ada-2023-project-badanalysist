@@ -62,9 +62,9 @@ function createMap(regions) {
         text: regions.map(region => region.hover_text),
         hoverinfo: 'text',
         marker: {
-            size: [82, 2, 15, 28, 3, 1, 1],
+            size: [82, 8, 15, 28, 10, 4, 4],
             color: [0.67, 2.1, 0.255, 0.547, 5.4, 1.1, 100 ],
-            colorscale: 'Greens',
+            colorscale: 'Blues',
         }
     }];
 
@@ -75,8 +75,10 @@ function createMap(regions) {
                 type: 'natural earth'
             },
             bgcolor: 'transparent',
-            landcolor: '#EAEAAE',  
-            watercolor: '#CDEDFD', 
+            showland: true,
+            landcolor: '#EAEAAE',
+            showocean: true,
+            oceancolor: '#CDEDFD'
         },
         paper_bgcolor: 'transparent', 
         plot_bgcolor: 'transparent', 
