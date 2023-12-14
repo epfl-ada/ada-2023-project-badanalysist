@@ -1,21 +1,45 @@
 fetch('viz_data/regional_analysis.json')
     .then(response => response.json())
     .then(data => {
-        prepareHoverTextAndPlot(data);
+        const aggregatedData = aggregateDataByRegion(data);
+        prepareHoverTextAndPlot(aggregatedData);
     })
     .catch(error => {
         console.error('Error fetching data: ', error);
     });
 
-function prepareHoverTextAndPlot(regions) {
-    regions.forEach(region => {
-        region.hover_text = `Region: ${region.region}<br>` +
-                            `Rank: ${region.rank}<br>` +
-                            `Popular Beer: ${region.popular_beers} (Count: ${region.counts_pop_beers.toFixed(2)}, Rating: ${region.rating_pop_beers.toFixed(2)})<br>` +
-                            `Popular Style: ${region.popular_styles} (Count: ${region.counts_pop_styles.toFixed(2)}, Rating: ${region.rating_pop_styles.toFixed(2)})`;
+function aggregateDataByRegion(data) {
+    const aggregated = {};
+
+    data.forEach(item => {
+        if (!aggregated[item.region]) {
+            aggregated[item.region] = {
+                region: item.region,
+                details: []
+            };
+        }
+        aggregated[item.region].details.push({
+            rank: item.rank,
+            popular_beers: item.popular_beers,
+            counts_pop_beers: item.counts_pop_beers,
+            rating_pop_beers: item.rating_pop_beers,
+            popular_styles: item.popular_styles,
+            counts_pop_styles: item.counts_pop_styles,
+            rating_pop_styles: item.rating_pop_styles
+        });
     });
 
-    // Now create the Plotly map
+    return Object.values(aggregated);
+}
+
+function prepareHoverTextAndPlot(regions) {
+    regions.forEach(region => {
+        region.hover_text = region.details.map(detail => 
+            `Rank: ${detail.rank}<br>` +
+            `Popular Beer: ${detail.popular_beers} (Count: ${detail.counts_pop_beers.toFixed(2)}, Rating: ${detail.rating_pop_beers.toFixed(2)})<br>` +
+            `Popular Style: ${detail.popular_styles} (Count: ${detail.counts_pop_styles.toFixed(2)}, Rating: ${detail.rating_pop_styles.toFixed(2)})`
+        ).join('<br><br>');
+    });
     createMap(regions);
 }
 
