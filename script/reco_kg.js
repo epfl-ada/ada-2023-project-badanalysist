@@ -12,7 +12,7 @@ $.get('viz_data/reco-kg-data.json', function (graph) {
   });
   option = {
     title: {
-      text: 'Les Miserables',
+      text: 'Beer Recommendation',
       subtext: 'Default layout',
       top: 'bottom',
       left: 'right'
