@@ -3,33 +3,54 @@ var myChart = echarts.init(chartDom);
 var option;
 
 myChart.showLoading();
-$.get('viz_data/reco-kg-data.json', function (webkitDep) {
+$.get('viz_data/reco-kg-data.json', function (graph) {
   myChart.hideLoading();
+  graph.nodes.forEach(function (node) {
+    node.label = {
+      show: node.symbolSize > 30
+    };
+  });
   option = {
-    legend: {
-      data: ['Cluster 1', 'Cluster 2', 'Cluster 3', 'Cluster 4', 'Cluster 5']
+    title: {
+      text: 'Les Miserables',
+      subtext: 'Default layout',
+      top: 'bottom',
+      left: 'right'
     },
+    tooltip: {},
+    legend: [
+      {
+        // selectedMode: 'single',
+        data: graph.categories.map(function (a) {
+          return a.name;
+        })
+      }
+    ],
+    animationDuration: 1500,
+    animationEasingUpdate: 'quinticInOut',
     series: [
       {
+        name: 'Beer Recommendation',
         type: 'graph',
-        layout: 'force',
-        animation: false,
+        layout: 'none',
+        data: graph.nodes,
+        links: graph.links,
+        categories: graph.categories,
+        roam: true,
         label: {
           position: 'right',
           formatter: '{b}'
         },
-        draggable: true,
-        data: webkitDep.nodes.map(function (node, idx) {
-          node.id = idx;
-          return node;
-        }),
-        categories: webkitDep.categories,
-        force: {
-          edgeLength: 5,
-          repulsion: 20,
-          gravity: 0.2
+        lineStyle: {
+          color: 'source',
+          curveness: 0.3
         },
-        edges: webkitDep.links
+        emphasis: {
+          focus: 'adjacency',
+          lineStyle: {
+            width: 10
+          }
+        }
       }
     ]
   };
