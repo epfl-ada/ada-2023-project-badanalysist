@@ -20,7 +20,7 @@ function aggregateDataByRegion(data) {
         }
         aggregated[item.region].details.push({
             rank: item.rank,
-            popular_beers: item.popular_beers,
+            popular_beers_name: item.popular_beers_name,
             counts_pop_beers: item.counts_pop_beers,
             rating_pop_beers: item.rating_pop_beers,
             popular_styles: item.popular_styles,
@@ -36,7 +36,7 @@ function prepareHoverTextAndPlot(regions) {
     regions.forEach(region => {
         region.hover_text = region.details.map(detail => 
             `Rank: ${detail.rank}<br>` +
-            `Popular Beer: ${detail.popular_beers} (Count: ${detail.counts_pop_beers.toFixed(2)}, Rating: ${detail.rating_pop_beers.toFixed(2)})<br>` +
+            `Popular Beer: ${detail.popular_beers_name} (Count: ${detail.counts_pop_beers.toFixed(2)}, Rating: ${detail.rating_pop_beers.toFixed(2)})<br>` +
             `Popular Style: ${detail.popular_styles} (Count: ${detail.counts_pop_styles.toFixed(2)}, Rating: ${detail.rating_pop_styles.toFixed(2)})`
         ).join('<br><br>');
     });
