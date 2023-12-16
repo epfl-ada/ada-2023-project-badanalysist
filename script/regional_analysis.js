@@ -32,12 +32,13 @@ function aggregateDataByRegion(data) {
     return Object.values(aggregated);
 }
 
+
 function prepareHoverTextAndPlot(regions) {
     regions.forEach(region => {
-        region.hover_text = region.details.map(detail => 
+        region.hover_text =  `Region: ${region.region}<br><br>` + region.details.map(detail => 
             `Rank: ${detail.rank}<br>` +
-            `Popular Beer: ${detail.popular_beers_name} (Count: ${detail.counts_pop_beers.toFixed(2)}, Rating: ${detail.rating_pop_beers.toFixed(2)})<br>` +
-            `Popular Style: ${detail.popular_styles} (Count: ${detail.counts_pop_styles.toFixed(2)}, Rating: ${detail.rating_pop_styles.toFixed(2)})`
+            `Popular Beer: ${detail.popular_beers_name}<br>` +
+            `Popular Style: ${detail.popular_styles}`
         ).join('<br><br>');
     });
     createMap(regions);
@@ -62,9 +63,8 @@ function createMap(regions) {
         text: regions.map(region => region.hover_text),
         hoverinfo: 'text',
         marker: {
-            size: [82, 14, 20, 28, 16, 10, 10],
-        
-            color:[50,40,70,60,20,50,10],
+            size: [100, 16, 50, 70, 32, 32, 10],
+            color:[60,30,70,50,20,20,10],
             colorscale: 'Blues',
         }
     }];
