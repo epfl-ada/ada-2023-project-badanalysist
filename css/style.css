@@ -28,6 +28,7 @@ body, html {
 
 #main-image {
     position: absolute;
+    /* position: static; */
     z-index: 10;
     top: 50%; 
     left: 50%; 
@@ -225,3 +226,14 @@ body, html {
         transform: translateY(-10px); /* 上移10像素 */
     }
 }
+
+#horizontalContainer {
+    width: 100%; /* Adjust width as needed */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Keeps the chart in a single line */
+}
+#featureImp {
+    display: inline-block;
+    width: 1000px; /* Adjust to the width of your chart */
+}
+

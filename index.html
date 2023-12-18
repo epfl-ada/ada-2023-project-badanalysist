@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,17 +13,20 @@
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
     <style>
         .spacing {
-          height: 50px;
+            height: 50px;
         }
     </style>
 </head>
+
 <body>
     <img src="img/bg.png" alt="background image" id="background-image">
 
     <div class="container">
-        <h1 class="title" id="title">Crafting a Personalized Beer 
-            <img src="img/wheat.png" alt="Wheat Icon" class="inline-icon" /> Landscape</h1>
-        <h2 class="title" id="sub-title">Analyzing User Preferences and Naming Impact for Guiding Targeted Recommendation</h2>    
+        <h1 class="title" id="title">Crafting a Personalized Beer
+            <img src="img/wheat.png" alt="Wheat Icon" class="inline-icon" /> Landscape
+        </h1>
+        <h2 class="title" id="sub-title">Analyzing User Preferences and Naming Impact for Guiding Targeted
+            Recommendation</h2>
         <div id="names-list">
             <p class="name">Siyuan Cheng</p>
             <p class="name">Zhixun Chen</p>
@@ -33,30 +37,35 @@
         <a href="https://github.com/epfl-ada/ada-2023-project-badanalysist" id="github-link">
             <img src="img/github-icon.png" alt="Github link" />
         </a>
-        <div class="scroll-prompt"><p>SCROLL</p><img class="scroll-down" src="img/arrow-down.svg"></div>
+        <div class="scroll-prompt">
+            <p>SCROLL</p><img class="scroll-down" src="img/arrow-down.svg">
+        </div>
         <div class="topic">
             <div class="box" id="topic1">Basic Statistics</div>
             <div class="box" id="topic2">Beer Style Similarities</div>
             <div class="box" id="topic3">Beer Popularity and Taste Preference</div>
             <div class="box" id="topic4">Beer Name, Beer Flavor</div>
             <div class="box" id="topic5">Let's Recommend!</div>
-        </div> 
+        </div>
 
         <!-- Edit Here -->
         <div class="content">
             <div class="intro" id="section0">
                 <h3 class="slide-header">Introduction</h3>
                 <p>
-                    Embark on a journey into the secret world of beer with our project! 
-                    Dive deep into the trends and tastes of the beer world as we meticulously interpret vast datasets from BeerAdvocate and RateBeer. 
-                    Our exploration uncovers not just the popularity of beer and the influence of naming on ratings, 
-                    but also delves into the similarities between styles. Utilizing methods like K-means clustering, 
-                    sentiment analysis, and graph network modeling, we analyze over a million beer ratings to comprehensively define beer styles. 
-                    From clustering regional preferences to exploring the sentiment and language in beer names, 
-                    and studying textual similarities between beer styles, 
-                    our project merges statistical methods with natural language processing techniques to offer a multi-faceted view of the beer domain. 
-                    Our findings provide guidance for breweries and tailor recommendations for users, 
-                    considering not just popularity but also quality attributes and regional taste variations. 
+                    Embark on a journey into the secret world of beer with our project!
+                    Dive deep into the trends and tastes of the beer world as we meticulously interpret vast datasets
+                    from BeerAdvocate and RateBeer.
+                    Our exploration uncovers not just the popularity of beer and the influence of naming on ratings,
+                    but also delves into the similarities between styles. Utilizing methods like K-means clustering,
+                    sentiment analysis, and graph network modeling, we analyze over a million beer ratings to
+                    comprehensively define beer styles.
+                    From clustering regional preferences to exploring the sentiment and language in beer names,
+                    and studying textual similarities between beer styles,
+                    our project merges statistical methods with natural language processing techniques to offer a
+                    multi-faceted view of the beer domain.
+                    Our findings provide guidance for breweries and tailor recommendations for users,
+                    considering not just popularity but also quality attributes and regional taste variations.
                     Join us on this fascinating journey of beer exploration!
                 </p>
             </div>
@@ -66,28 +75,43 @@
                 <div class="blurb" id="blurb1">
                     <h3 class="slide-header">Basic Statistics about the Beer Data</h3>
                     <p>
-                        Our matched dataset, featuring 6,084 breweries and 45,640 beers from BeerAdvocate and RateBeer, includes over 1.2 million ratings. 
-                        A 20-rating threshold refines this extensive dataset, optimizing processing speed and focusing on frequently reviewed beers. 
-                        The matched data from both platforms ensures cross-platform consistency, enhancing our model's reliability and quality, 
+                        Our matched dataset, featuring 6,084 breweries and 45,640 beers from BeerAdvocate and RateBeer,
+                        includes over 1.2 million ratings.
+                        A 20-rating threshold refines this extensive dataset, optimizing processing speed and focusing
+                        on frequently reviewed beers.
+                        The matched data from both platforms ensures cross-platform consistency, enhancing our model's
+                        reliability and quality,
                         making it ideal for developing a beer recommendation system.
                     </p>
                 </div>
                 <div class="analysis">
                     <h4>Distribution comparison of rating features between two websites</h4>
                     <p>
-                        The histogram charts presented appear to compare the distribution of beer ratings between two websites: RateBeer and BeerAdvocate. 
-                        The data has been cleaned to remove all NaN values and then standardized using min-max scaling to ensure comparability across different rating scales. 
-                        The histograms are divided into five categories: alcohol by volume (abv), appearance, aroma, palate, and taste.
-                        From a visual analysis, we can see that the general trends between RateBeer and BeerAdvocate are similar, 
-                        suggesting a level of agreement in the ratings of the matched data provided by users on both platforms.
+                        The histogram charts presented appear to compare the distribution of beer ratings between two
+                        websites: RateBeer and BeerAdvocate.
+                        The data has been cleaned to remove all NaN values and then standardized using min-max scaling
+                        to ensure comparability across different rating scales.
+                        The histograms are divided into five categories: alcohol by volume (abv), appearance, aroma,
+                        palate, and taste.
+                        From a visual analysis, we can see that the general trends between RateBeer and BeerAdvocate are
+                        similar,
+                        suggesting a level of agreement in the ratings of the matched data provided by users on both
+                        platforms.
                         The most notable patterns are:
                     </p>
                     <ul>
-                        <li><b>ABV:</b> The distribution for ABV appears to be left-skewed for both RateBeer and BeerAdvocate, indicating that most beers have a lower alcohol content.</li>
-                        <li><b>Appearance:</b> Both sites show a high frequency of beers with higher appearance ratings, with a sharp peak at the high end of the scale.</li>
-                        <li><b>Aroma:</b> The distributions for aroma ratings are quite similar between the two sites, with a slight right skew, suggesting that users generally rate the aroma of beers positively.</li>
-                        <li><b>Palate:</b> The palate ratings show a more varied distribution, with RateBeer displaying a bimodal distribution, suggesting two common ratings at which beers are evaluated, whereas BeerAdvocate's distribution is more right-skewed.</li>
-                        <li><b>Taste:</b> Taste ratings are crucial, and here both sites show a right-skewed distribution, indicating a tendency towards higher ratings for taste.</li>
+                        <li><b>ABV:</b> The distribution for ABV appears to be left-skewed for both RateBeer and
+                            BeerAdvocate, indicating that most beers have a lower alcohol content.</li>
+                        <li><b>Appearance:</b> Both sites show a high frequency of beers with higher appearance ratings,
+                            with a sharp peak at the high end of the scale.</li>
+                        <li><b>Aroma:</b> The distributions for aroma ratings are quite similar between the two sites,
+                            with a slight right skew, suggesting that users generally rate the aroma of beers
+                            positively.</li>
+                        <li><b>Palate:</b> The palate ratings show a more varied distribution, with RateBeer displaying
+                            a bimodal distribution, suggesting two common ratings at which beers are evaluated, whereas
+                            BeerAdvocate's distribution is more right-skewed.</li>
+                        <li><b>Taste:</b> Taste ratings are crucial, and here both sites show a right-skewed
+                            distribution, indicating a tendency towards higher ratings for taste.</li>
                     </ul>
                     <div id="rate-dist" class="plotly-chart"></div>
                     <div class="spacing"></div>
@@ -95,22 +119,29 @@
                     <h4>Beer feature and score correlations of the two websites</h4>
                     <p>For RateBeer:</p>
                     <ul>
-                        <li>There is a moderate to strong positive correlation between taste and aroma, which is the highest correlation observed (0.74).</li>
+                        <li>There is a moderate to strong positive correlation between taste and aroma, which is the
+                            highest correlation observed (0.74).</li>
                         <li>Appearance has a moderate positive correlation with palate (0.44) and taste (0.40).</li>
-                        <li>ABV has the lowest correlations with other features, suggesting that the alcohol content does not strongly influence how users rate the other attributes of the beer.</li>
+                        <li>ABV has the lowest correlations with other features, suggesting that the alcohol content
+                            does not strongly influence how users rate the other attributes of the beer.</li>
                     </ul>
                     <p>For BeerAdvocate:</p>
                     <ul>
-                        <li>The correlations are generally higher compared to RateBeer, indicating a stronger relationship between the features on this platform.</li>
-                        <li>Taste and aroma again have a strong positive correlation (0.76), which is consistent with RateBeer's ratings.</li>
-                        <li>Appearance has a strong correlation with both palate (0.56) and taste (0.52), which is somewhat stronger than on RateBeer.</li>
+                        <li>The correlations are generally higher compared to RateBeer, indicating a stronger
+                            relationship between the features on this platform.</li>
+                        <li>Taste and aroma again have a strong positive correlation (0.76), which is consistent with
+                            RateBeer's ratings.</li>
+                        <li>Appearance has a strong correlation with both palate (0.56) and taste (0.52), which is
+                            somewhat stronger than on RateBeer.</li>
                     </ul>
                     <p>
-                        Overall, this heatmap suggests that certain attributes of beer, such as taste and aroma, 
-                        are consistently perceived as related by users of both RateBeer and BeerAdvocate. 
-                        The strength of the correlations varies slightly between the two platforms, but the general pattern remains the same, 
-                        indicating similar rating behaviors among the users. 
-                        This information can be particularly useful for brewers and marketers to understand what characteristics of beer are 
+                        Overall, this heatmap suggests that certain attributes of beer, such as taste and aroma,
+                        are consistently perceived as related by users of both RateBeer and BeerAdvocate.
+                        The strength of the correlations varies slightly between the two platforms, but the general
+                        pattern remains the same,
+                        indicating similar rating behaviors among the users.
+                        This information can be particularly useful for brewers and marketers to understand what
+                        characteristics of beer are
                         most influential in consumer ratings and perception.
                     </p>
                     <div class="heatmap-container">
@@ -121,35 +152,53 @@
 
                     <h4>Percentages about beer styles</h4>
                     <p>
-                        The pie chart visualizes the popularity of various beer styles within our dataset, which includes 104 different styles. The pie chart lists first twelve beer styles which take up most of percentage in the dataset.
-                        "American IPA" is the most popular listed style, making up 12.1% of the dataset. This suggests that it's a prevalent style among beer varieties in your dataset.
-                        The next three styles in descending order of popularity are "American Pale Ale (APA)" at 6.77%, "Saison / Farmhouse Ale" at 5.89%, and "American Double / Imperial IPA" at 4.99%. 
-                        These styles are evidently popular and significantly represented. The smaller slices, such as "Belgian Pale Ale" at 1.88%, indicate less common styles within the dataset
+                        The pie chart visualizes the popularity of various beer styles within our dataset, which
+                        includes 104 different styles. The pie chart lists first twelve beer styles which take up most
+                        of percentage in the dataset.
+                        "American IPA" is the most popular listed style, making up 12.1% of the dataset. This suggests
+                        that it's a prevalent style among beer varieties in your dataset.
+                        The next three styles in descending order of popularity are "American Pale Ale (APA)" at 6.77%,
+                        "Saison / Farmhouse Ale" at 5.89%, and "American Double / Imperial IPA" at 4.99%.
+                        These styles are evidently popular and significantly represented. The smaller slices, such as
+                        "Belgian Pale Ale" at 1.88%, indicate less common styles within the dataset
                         <br>
                         <br>
-                        It's important to note that while a smaller percentage does not necessarily mean a style is unpopular globally, it does reflect its frequency within this specific collection of data. 
-                        The pie chart effectively highlights the diversity within the beer styles and indicates which styles are most commonly represented in our dataset. 
-                        This can be useful for understanding consumer preferences, production trends, or for making decisions about what beers to feature if the dataset reflects a particular market or beer selection.
+                        It's important to note that while a smaller percentage does not necessarily mean a style is
+                        unpopular globally, it does reflect its frequency within this specific collection of data.
+                        The pie chart effectively highlights the diversity within the beer styles and indicates which
+                        styles are most commonly represented in our dataset.
+                        This can be useful for understanding consumer preferences, production trends, or for making
+                        decisions about what beers to feature if the dataset reflects a particular market or beer
+                        selection.
                     </p>
                     <div id="style-pgt" class="plotly-chart"></div>
                     <div class="spacing"></div>
 
                     <h4>Locations of Users and Breweries</h4>
                     <p>
-                        There are 61 countries besides US in the dataset. There are 658 users and 4,323 breweries located outside of the United States. 
-                        This indicates a significantly higher number of breweries compared to the number of users in these regions. 
-                        It suggests that while there is a substantial brewing industry outside the US, the user base (who might be rating or using the dataset) is smaller in number.
+                        There are 61 countries besides US in the dataset. There are 658 users and 4,323 breweries
+                        located outside of the United States.
+                        This indicates a significantly higher number of breweries compared to the number of users in
+                        these regions.
+                        It suggests that while there is a substantial brewing industry outside the US, the user base
+                        (who might be rating or using the dataset) is smaller in number.
                         <br>
                         <br>
-                        There are 2,683 users and 3,958 breweries located in the United States. The number of users is considerably higher in the US compared to non-US countries. 
-                        Additionally, the number of breweries in the US is slightly lower than in non-US countries. 
-                        This could reflect a higher engagement level with the beer rating or dataset usage among US users, 
-                        or it could indicate a more significant interest in the diverse range of beer styles available in the US.
+                        There are 2,683 users and 3,958 breweries located in the United States. The number of users is
+                        considerably higher in the US compared to non-US countries.
+                        Additionally, the number of breweries in the US is slightly lower than in non-US countries.
+                        This could reflect a higher engagement level with the beer rating or dataset usage among US
+                        users,
+                        or it could indicate a more significant interest in the diverse range of beer styles available
+                        in the US.
                         <br>
                         <br>
-                        The data reflects a robust international brewing industry, yet user engagement with this dataset is more pronounced in the US. 
-                        This higher activity among American users could explain the predominance of American beer styles in the data. 
-                        Although the number of breweries is comparable in the US and non-US countries, the user distribution suggests a dataset potentially skewed towards a US-centric audience.
+                        The data reflects a robust international brewing industry, yet user engagement with this dataset
+                        is more pronounced in the US.
+                        This higher activity among American users could explain the predominance of American beer styles
+                        in the data.
+                        Although the number of breweries is comparable in the US and non-US countries, the user
+                        distribution suggests a dataset potentially skewed towards a US-centric audience.
                     </p>
                     <div id="user-brewery-location" class="plotly-chart"></div>
                 </div>
@@ -159,55 +208,111 @@
             <div class="content-section" id="section2">
                 <div class="blurb" id="blurb2">
                     <h3 class="slide-header">Beer Style Similarities</h3>
-                    <p>Calculating the "distance" between different beer styles based on their textual descriptions involves using text similarity measures that can quantify how close or different the descriptions are.</p>
+                    <p>Calculating the "distance" between different beer styles based on their textual descriptions
+                        involves using text similarity measures that can quantify how close or different the
+                        descriptions are.</p>
                 </div>
                 <div class="analysis">
                     <p>
-                        We intend to calculate the similarity between beer styles, which are relatively abstract and not indicative of specific flavors. 
-                        To address this, we have sourced detailed descriptions of beer characteristics from other websites. These descriptions cover the following aspects: 
-                        Color, Clarity, Perceived Malt Aroma & Flavor, Perceived Hop Aroma & Flavor, Perceived Bitterness, Fermentation Characteristics, Body, Alcohol by Volume (ABV), 
+                        We intend to calculate the similarity between beer styles, which are relatively abstract and not
+                        indicative of specific flavors.
+                        To address this, we have sourced detailed descriptions of beer characteristics from other
+                        websites. These descriptions cover the following aspects:
+                        Color, Clarity, Perceived Malt Aroma & Flavor, Perceived Hop Aroma & Flavor, Perceived
+                        Bitterness, Fermentation Characteristics, Body, Alcohol by Volume (ABV),
                         International Bitterness Units (IBU), and Standard Reference Method (SRM) for color.
                         <br>
                         <br>
-                        The selection of these dimensions to describe beer styles is deliberate, as they represent key aspects of a beer's sensory and chemical properties, 
-                        which typically influence consumer preferences and choices. Among these, Alcohol_ABV, Bitterness_IBU, and Color_SRM are specific numerical ranges, 
-                        while the others are textual descriptions. For the numarical ranges, we combine its mean value and its ranges to calculate similarities. 
-                        For the textual parts, we compute similarity using word2vec to quantify the likeness between descriptors. 
-                        Finally, we combine the numerical values and textual vectors to represent the flavor profile of a beer style.
+                        The selection of these dimensions to describe beer styles is deliberate, as they represent key
+                        aspects of a beer's sensory and chemical properties,
+                        which typically influence consumer preferences and choices. Among these, Alcohol_ABV,
+                        Bitterness_IBU, and Color_SRM are specific numerical ranges,
+                        while the others are textual descriptions. For the numarical ranges, we combine its mean value
+                        and its ranges to calculate similarities.
+                        For the textual parts, we compute similarity using word2vec to quantify the likeness between
+                        descriptors.
+                        Finally, we combine the numerical values and textual vectors to represent the flavor profile of
+                        a beer style.
                         <br>
                         <br>
                     </p>
                     <h4>Table for a subset beer style similarities</h4>
-                    <p>In the dataset, there are 104 beer styles. Here we select 5 beer styles to analyze the similarity results</p>
+                    <p>In the dataset, there are 104 beer styles. Here we select 5 beer styles to analyze the similarity
+                        results</p>
                     <div id="similarity-table" class="plotly-chart"></div>
                     <h4>Analysis for a subset beer style similarities</h4>
                     <p>
-                        <b>English Brown Ale and American Brown Ale</b> show the highest similarity (0.99), 
-                        which is consistent with their close characteristics in terms of color (SRM values are overlapping), 
-                        alcohol content (ABV), and malt flavor profiles, 
+                        <b>English Brown Ale and American Brown Ale</b> show the highest similarity (0.99),
+                        which is consistent with their close characteristics in terms of color (SRM values are
+                        overlapping),
+                        alcohol content (ABV), and malt flavor profiles,
                         even though the American Brown Ale tends to have a higher bitterness (IBU) and more varied body.
                         <br>
                         <br>
-                        <b>Smoked Beer</b> is markedly different from the other beer styles, as indicated by its lower similarity scores across the board (e.g., 0.55 with English Brown Ale). 
-                        This is due to its broad range in every category, particularly the color (1-100 SRM) and bitterness (1-120 IBU), and the fact that the other sensory characteristics are variable.
+                        <b>Smoked Beer</b> is markedly different from the other beer styles, as indicated by its lower
+                        similarity scores across the board (e.g., 0.55 with English Brown Ale).
+                        This is due to its broad range in every category, particularly the color (1-100 SRM) and
+                        bitterness (1-120 IBU), and the fact that the other sensory characteristics are variable.
                         <br>
                         <br>
-                        <b>American Pale Lager</b> has moderate similarity with the American IPA (0.87) despite having a much lighter color (2-4 SRM compared to 6-12 SRM) and lower bitterness (5-19 IBU compared to 50-70 IBU). 
-                        It shares a similar range of alcohol content with the IPAs, which may account for some of the similarity.
+                        <b>American Pale Lager</b> has moderate similarity with the American IPA (0.87) despite having a
+                        much lighter color (2-4 SRM compared to 6-12 SRM) and lower bitterness (5-19 IBU compared to
+                        50-70 IBU).
+                        It shares a similar range of alcohol content with the IPAs, which may account for some of the
+                        similarity.
                         <br>
                         <br>
-                        <b>American IPA</b> shows high similarity with the American Brown Ale (0.98), likely due to shared hop flavor characteristics and a similar range in alcohol content. 
-                        However, the American IPA is distinct in its higher bitterness and the specific hop flavors it presents, such as floral, citrus-like, and piney notes, which contribute to its uniqueness.
+                        <b>American IPA</b> shows high similarity with the American Brown Ale (0.98), likely due to
+                        shared hop flavor characteristics and a similar range in alcohol content.
+                        However, the American IPA is distinct in its higher bitterness and the specific hop flavors it
+                        presents, such as floral, citrus-like, and piney notes, which contribute to its uniqueness.
                     </p>
-                    <div id="similarity-heatmap" class="plotly-chart"></div>
+                    <div id='similarity-heatmap' class="plotly-chart"></div>
                 </div>
             </div>
-            
+
             <!-- Siyuan -->
             <div class="content-section" id="section3">
                 <div class="blurb" id="blurb3">
                     <h3 class="slide-header">Beer Popularity and Taste Preference</h3>
-                    <p>text</p>
+                    <p>
+                        The beer was clustered based on ABV and several detailed ratings to investigate the similarity
+                        patterns among different beers.
+                    </p>
+                </div>
+                <div class="analysis">
+                    <p>
+                        The quantitative features 'ABV', 'Appearance', 'Aroma', 'Palate', and 'Taste' are utilized in
+                        this section. To mitigate the impact of ABV data's scale and distribution, it is divided into
+                        five intervals and values are reassigned. To better identify different types of beer, we aim to
+                        classify beers based on the relative relationships across various features. Therefore, we have
+                        chosen to explore this using k-means clustering based on cosine distance.
+                        <br>
+                        After careful selection of the optimal number of clusters using regression methods and
+                        incorporating the clustering results, the beers in our dataset have been divided into five
+                        distinct categories. We have analyzed and plotted the cluster centroids to represent the
+                        overarching characteristics of all the beers within each cluster.
+                    </p>
+                    <div id="radarChart" class="plotly-chart"></div>
+                    <p>
+                        From the radar charts, we can intuitively deduce that the alcohol by volume (ABV) level does not
+                        significantly impact the overall evaluation of beer, provided other features are well-balanced.
+                        Conversely, a beer's appearance and ABV level are not sufficient to compensate for poor taste
+                        and aroma. This suggests that while ABV and appearance contribute to a beer's appeal, taste and
+                        aroma are critical factors in determining its overall quality and reception. This observation is
+                        in line with the results obtained from ridge regression in each cluster.
+                    </p>
+                    <div id="horizontalContainer">
+                        <div id="featureImp"></div>
+                    </div>
+                    <p>
+                        By implementing ridge regression on each cluster, we generate a feature importance map based on
+                        the coefficients of features. These maps consistently highlight taste as the most influential
+                        factor in customer preferences across clusters, while the second most significant
+                        feature tends to oscillates between aroma and palate. Notably, attributes like ABV level and
+                        appearance have a relatively minor impact, underscoring that taste, followed by aroma or palate,
+                        predominantly shapes customer evaluations of beers.
+                    </p>
                 </div>
             </div>
 
@@ -229,14 +334,14 @@
                     <p>text</p>
                     <div id="regional_analysis" class="plotly-chart"></div>
                     <p>text</p>
-                    <div class="visualiz"  id="reco-kg"></div>
+                    <div class="visualiz" id="reco-kg"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="script/scroll.js"></script> 
-    <script type="text/javascript" src="script/click.js"></script> 
+    <script type="text/javascript" src="script/scroll.js"></script>
+    <script type="text/javascript" src="script/click.js"></script>
     <script type="text/javascript" src="script/reco_kg.js"></script>
     <script type="text/javascript" src="script/rate-dist.js"></script>
     <script type="text/javascript" src="script/rate-heatmap1.js"></script>
@@ -246,5 +351,8 @@
     <script type="text/javascript" src="script/similarity-heatmap.js"></script>
     <script type="text/javascript" src="script/user_brewery_location.js"></script>
     <script type="text/javascript" src="script/regional_analysis.js"></script>
+    <script type="text/javascript" src="script/radar.js"></script>
+    <script type="text/javascript" src="script/feature-importance.js"></script>
 </body>
+
 </html>
