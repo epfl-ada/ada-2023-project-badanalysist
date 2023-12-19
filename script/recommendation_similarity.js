@@ -50,4 +50,23 @@ Plotly.newPlot('recommendation_similarity', [], {
         }
     }
   });
+
+Plotly.relayout('recommendation_similarity', {
+    paper_bgcolor: 'transparent',
+    plot_bgcolor: 'transparent',
+    // ... other layout configurations
+    xaxis: {
+        visible: false, // Hides the x-axis
+        showgrid: false,
+        zeroline: false,
+        showticklabels: false
+      },
+      yaxis: {
+        visible: false, // Hides the y-axis
+        showgrid: false,
+        zeroline: false,
+        showticklabels: false
+        }
+});
+
   
