@@ -1,6 +1,6 @@
 Plotly.newPlot('recommendation_similarity', [], {
     sliders: [{
-      pad: {t: 30},
+      pad: {t: 40},
       currentvalue: {
         xanchor: 'right',
         font: {
@@ -35,6 +35,7 @@ Plotly.newPlot('recommendation_similarity', [], {
     layout: {
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
+
         xaxis: {
           visible: false, // Hides the x-axis
           showgrid: false,
