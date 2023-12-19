@@ -5,7 +5,7 @@ Plotly.newPlot('recommendation_similarity', [], {
       currentvalue: {
         xanchor: 'right',
         font: {
-          size: 30
+          size: 20
         }
       },
       steps: [{
