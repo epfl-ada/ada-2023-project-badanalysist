@@ -1,7 +1,7 @@
 Plotly.newPlot('recommendation_similarity', [], {
     sliders: [{
       pad: {t: 30},
-      y: -0.8,
+      y: -0.2,
       currentvalue: {
         xanchor: 'right',
         font: {
@@ -28,14 +28,15 @@ Plotly.newPlot('recommendation_similarity', [], {
       yref: 'paper',
       x: 0,
       y: 1,
-      sizex: 1,
-      sizey: 1.5,
+      sizex: 0.8,
+      sizey: 1.2,
       sizing: 'stretch',
       layer: 'below'
     }],
     layout: {
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
+        margin: { l: 50, r: 50, b: 100, t: 50, pad: 4 }, // Adjusted margins
 
         xaxis: {
           visible: false, // Hides the x-axis
