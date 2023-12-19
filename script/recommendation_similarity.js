@@ -1,6 +1,6 @@
 Plotly.newPlot('recommendation_similarity', [], {
     sliders: [{
-      pad: {t: 40},
+      pad: {t: 100},
       currentvalue: {
         xanchor: 'right',
         font: {
