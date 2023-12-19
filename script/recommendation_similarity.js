@@ -18,11 +18,11 @@ Plotly.newPlot('recommendation_similarity', [], {
       }, {
         label: 'Stout',
         method: 'relayout',
-        args: [{'images[0].source': '.similarity_stout'}]
+        args: [{'images[0].source': 'img.similarity_stout'}]
       }]
     }],
     images: [{
-      source: 'path_to_your_first_image.jpg', // Initial image displayed
+      source: 'img/similarity_ipa.jpg', // Initial image displayed
       xref: 'paper',
       yref: 'paper',
       x: 0,
