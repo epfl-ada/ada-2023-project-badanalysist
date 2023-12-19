@@ -29,6 +29,8 @@ var data = [{
 
 var layout = {
   title: 'Distribution of Languages of Beer\'s Name',
+  paper_bgcolor: 'transparent',
+  plot_bgcolor: 'transparent',
   annotations: [
     {
       font: {
@@ -41,7 +43,7 @@ var layout = {
     },
     {
       font: {
-        size: 20
+        size: 16
       },
       showarrow: false,
       text: 'BA',
@@ -51,8 +53,8 @@ var layout = {
   ],
   height: 400,
   width: 600,
-  showlegend: false,
+  showlegend: true,
   grid: {rows: 1, columns: 2}
 };
 
-Plotly.newPlot('myDiv', data, layout);
+Plotly.newPlot('language_dis', data, layout);
