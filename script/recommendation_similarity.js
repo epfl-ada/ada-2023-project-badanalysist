@@ -28,9 +28,25 @@ Plotly.newPlot('recommendation_similarity', [], {
       x: 0,
       y: 1,
       sizex: 1,
-      sizey: 1,
+      sizey: 1.5,
       sizing: 'stretch',
       layer: 'below'
-    }]
+    }],
+    layout: {
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'transparent',
+        xaxis: {
+          visible: false, // Hides the x-axis
+          showgrid: false,
+          zeroline: false,
+          showticklabels: false
+        },
+        yaxis: {
+          visible: false, // Hides the y-axis
+          showgrid: false,
+          zeroline: false,
+          showticklabels: false
+        }
+    }
   });
   
