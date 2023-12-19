@@ -18,7 +18,7 @@ Plotly.newPlot('recommendation_similarity', [], {
       }, {
         label: 'Stout',
         method: 'relayout',
-        args: [{'images[0].source': 'img.similarity_stout'}]
+        args: [{'images[0].source': 'img/similarity_stout.jpg'}]
       }]
     }],
     images: [{
