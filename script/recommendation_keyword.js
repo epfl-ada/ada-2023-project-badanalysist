@@ -5,7 +5,7 @@ Plotly.newPlot('recommendation_keyword', [], {
       currentvalue: {
         xanchor: 'right',
         font: {
-          size: 20
+          size: 10
         }
       },
       steps: [{

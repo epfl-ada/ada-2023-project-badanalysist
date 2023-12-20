@@ -110,7 +110,7 @@ h3 {
     align-items: stretch; 
   }
 
-  .recommendation_container {
+.recommendation-container {
     display: flex;  /* Aligns children in a row */
     justify-content: center; /* Centers children horizontally */
     align-items: center; /* Centers children vertically */
