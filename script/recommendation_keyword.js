@@ -27,7 +27,7 @@ Plotly.newPlot('recommendation_keyword', [], {
       source: 'img/keyword_rich.jpg', // Initial image displayed
       xref: 'paper',
       yref: 'paper',
-      x: 0.15,
+      x: 0,
       y: 1,
       sizex: 1.3,
       sizey: 1.6,
