@@ -9,7 +9,7 @@ This project takes a deep dive into beer popularity and user taste preferences u
 ## Research Questions
 - How can we know beers' popularity and user taste preference according to ratings? Do beer styles share similarities?
 - Does the style and language of a beer's name have an impact on its rating and the sentiments expressed in its review text?
-- How to build a mini-recommendation system based on our data analysis and graph network modeling?
+- How to build a mini-recommendation system based on our data analysis?
   
 ## Data
 Our dataset, featuring 6,084 breweries and 45,640 beers from BeerAdvocate and RateBeer, includes over 1.2 million ratings. A 20-rating threshold refines this extensive dataset, optimizing processing speed and focusing on frequently reviewed beers. The matched data from both platforms ensures cross-platform consistency, enhancing our model's reliability and quality, making it ideal for developing a beer recommendation system.[^1]
@@ -34,9 +34,7 @@ OLS regression finds a significant positive correlation (1% confidence level) in
 Calculating the "distance" between different beer styles based on their textual descriptions involves using text similarity measures that can quantify how close or different the descriptions are. Tools like Word2Vec or GloVe convert words into high-dimensional vectors in such a way that semantically similar words are closer in the vector space. You can convert the whole text into a vector by taking the average of all word vectors in the text and then use cosine similarity to find distances between text vectors. In Python, we can use library gensim for Word2Vec to compute these distances.
 
 ### Task 4: Graph Network Modeling
-We plan to leverage our comprehensive beer dataset to construct a graph network model in Neo4j. This model will form the backbone of our visualization efforts and interactive recommendation system. It will map the intricate relationships between beers, their styles, breweries, and users within their respective locations. As depicted in the model diagram, 'Beer' serves as the central node, linked to 'Style' through 'belongs_to' relationships, to 'Breweries' via 'produced_by,' and to 'Users' who have 'rated' the beers. The 'Breweries' are connected to 'Location,' establishing a geospatial context. Relationships such as 'is_similar_to' are computed from task 1 and 3. This structured network will facilitate complex queries and enable us to generate personalized beer recommendations by analyzing patterns and preferences within the data.
-<br>
-<div align=center><img style="margin: 0 auto;" src ="https://github.com/epfl-ada/ada-2023-project-badanalysist/blob/main/img/graph%20network%20modeling.png" width="40%" height="40%"></div>
+Since we cannot access the cloud-based graph database and the total amount of beer product data is too large to be deployed on GitHub, we have removed the part about setting up the graph database.
 
 ### Task 5: Recommendation Function
 We're creating a beer recommendation tool that utilizes beer review platform data, ideal for users with limited knowledge of beers. We plan to offer suggestions based on both basic criteria such as style, brewery, ABV, and also more comprehensive factors such as popularity and qualitative attributes like taste. Our initial analysis of regional beer preferences also inspires tailored recommendations catering both locals and exotic tourists.
@@ -55,9 +53,9 @@ Beers will be ranked by popularity, both globally and regionally, using review c
 **22.12.2023** Milestone 3 Deadline
 
 ## Team Organization
-- Siyuan: task 1
+- Siyuan: basic statistic visualization; ...
 - Zhixun: task 2
-- Xinyi: task 3 & 4
+- Xinyi: web set up and design; basic statistic visualization and analysis; beer style similarity visualization and analysis;
 - Yihan: task 5
 
 Each team member will be responsible for creating the final visualizations for their respective task, completing the data story.
