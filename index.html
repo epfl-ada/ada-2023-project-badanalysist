@@ -291,7 +291,8 @@
                         After careful selection of the optimal number of clusters using regression methods and
                         incorporating the clustering results, the beers in our dataset have been divided into five
                         distinct categories. We have analyzed and plotted the cluster centroids to represent the
-                        overarching characteristics of all the beers within each cluster.
+                        overarching characteristics of all the beers within each cluster. (All ratings have been
+                        normalized to a scale ranging from 0 to 1.)
                     </p>
                     <div id="radarChart" class="plotly-chart"></div>
                     <p>
@@ -302,21 +303,37 @@
                         aroma are critical factors in determining its overall quality and reception. This observation is
                         in line with the results obtained from ridge regression in each cluster.
                     </p>
+                    <br>
+                    <p>
+                        By implementing ridge regression on each cluster, we generate a feature importance map based on
+                        the coefficients of features. These maps consistently highlight taste and aroma as the most
+                        influential
+                        factors in customer preferences across all clusters, while the third most significant
+                        feature tends to oscillates between palate and appearance. Meanwhile, attributes like ABV level
+                        and
+                        appearance remain a relatively minor impact, underscoring that taste, followed by aroma and
+                        palate,
+                        predominantly shapes customer evaluations of beers.
+                    </p>
                     <div id="horizontalContainer">
                         <div id="featureImp"></div>
                     </div>
+                    <br>
                     <p>
-                        By implementing ridge regression on each cluster, we generate a feature importance map based on
-                        the coefficients of features. These maps consistently highlight taste as the most influential
-                        factor in customer preferences across clusters, while the second most significant
-                        feature tends to oscillates between aroma and palate. Notably, attributes like ABV level and
-                        appearance have a relatively minor impact, underscoring that taste, followed by aroma or palate,
-                        predominantly shapes customer evaluations of beers.
+                        Let's now visualize some examples within each cluster. We select the top five beers with the
+                        highest ratings and the bottom five with the lowest ratings in each cluster, and use MDS to
+                        project them onto a 2D map. It's noticeable that although the ratings of beers vary widely,
+                        their characteristics consistently align with their respective clusters. For instance, red
+                        points (beers from the 'High ABV, Visually Pleasing Beer' cluster) all possess relatively high
+                        ABV and appearance values, typically accompanied by moderate or lower performance in other
+                        aspects. The green points (beers from the 'Mild ABV, Well-Rounded Beer' cluster) uniformly
+                        exhibit lower ABV values with well-balanced performance across other features.
                     </p>
+                    <div id='clusterVis'></div>
                 </div>
             </div>
 
-			<!-- Zhixun -->
+            <!-- Zhixun -->
             <div class="content-section" id="section4">
                 <div class="blurb" id="blurb4">
                     <h3 class="slide-header">Beer Name, Beer Flavor</h3>
@@ -325,8 +342,8 @@
                 <div class="analysis">
                     <p>text</p>
                     <div id="language_dis" class="plotly-chart" align="center"></div>
-		    <div id="beername" class="plotly-chart" align="center"></div>
-					
+                    <div id="beername" class="plotly-chart" align="center"></div>
+
                 </div>
             </div>
 
@@ -339,7 +356,7 @@
                 <div class="analysis">
                     <p>text</p>
                     <div id="regional_analysis" class="plotly-chart"></div>
-                    
+
                     <p>text</p>
                     <div class="recommendation-container">
                         <div id="recommendation_keyword" class="plotly-chart"></div>
@@ -368,6 +385,7 @@
     <script type="text/javascript" src="script/recommendation_similarity.js"></script>
     <script type="text/javascript" src="script/recommendation_keyword.js"></script>
     <script type="text/javascript" src="script/beername.js"></script>
+    <script type="text/javascript" src="script/clusters.js"></script>
 </body>
 
 </html>
