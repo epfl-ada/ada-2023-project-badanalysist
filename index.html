@@ -333,42 +333,46 @@
                 </div>
             </div>
 
+	    <!-- Zhixun -->
             <div class="content-section" id="section4">
                 <div class="blurb" id="blurb4">
                     <h3 class="slide-header">Beer Name, Beer Flavor</h3>
                     <p>
 					Do beer names like "Tokyo" influence users' focus on oriental spices like coriander? We investigate how a beer's name, with its emotional tone (ranging from descriptive, like 'Co-op Wheat Beer,' to creative, such as 'Pheasantry Dancing Dragonfly') and language, may influence reviews.
-					<br>
-					<br>
-					We found that beers with German and Dutch names were rated significantly higher. Beer names with positive linguistic sentiment significantly increase beer ratings, especially for French and Spanish beer names.
+					<!-- To identify language, we use the langdetect library based on Google's language-detection library. For sentiment analysis, we employ Hugging Face's transformers library with a pre-trained bert-base-multilingual-uncased-sentiment model. -->
 					</p>
                 </div>
                 <div class="analysis">
-                    <p>text</p>
+                    <p>
+					Among beer names, English accounts for the largest proportion, reaching about 30%. we take beer names in English, French, German, Italian, Dutch, and Spanish as the main research objects.
+					</p>
                     <div id="language_dis" class="plotly-chart" align="center"></div>
-					<div id="beername1" class="plotly-chart" align="center"></div>
+					<h4> The impact of different languages of beer on ratings </h4>
 					<p>
 					We found that the language of a beer’s name had a significant impact on its rating. Among them, compared with other languages, the distribution of German and Dutch beer names can increase the beer score by 0.04, 0.05, at a 5% confidence level.
 					<br>
                     <br>
 					Interestingly, the two languages are considered highly similar. We speculate that this may be related to German beer culture and reputation.
-					<p>
-					<div id="beername2" class="plotly-chart" align="center"></div>
+					</p>
+					<div id="beername1" class="plotly-chart" align="center"></div>
+					<h4> The impact of sentiment conveyed by beer on ratings </h4>
 					<p>
 					We divided the linguistic sentiment of beer names into five levels from 1 to 5. We found that, overall, the sentiment of positive beer names had a significant positive impact on their ratings. Each increase in emotional level can increase the beer rating by 0.01.
 					<br>
 					<br>
-					In subsamples from different regions, this positive impact of language emotion is significant in the United States and Canada, but not significant in Europe.
-					<p>
-					<div id="beername3" class="plotly-chart" align="center"></div>
-					<p>
+					In subsamples from different users' locations, this positive impact of language emotion is significant for users in the United States and Canada, but not significant in Europe.
+					</p>
 					<div id="beername2" class="plotly-chart" align="center"></div>
+					<h4> The impact of the sentiment conveyed by beer names in various languages on ratings </h4>					
 					<p>
 					We divided the linguistic sentiment of beer names into five levels from 1 to 5. We found that, overall, the verbal sentiment of positive beer names had a significant positive impact on their ratings. Each increase in emotional level can increase the beer rating by 0.02.
 					<br>
 					<br>
 					The intersection of linguistic emotion and language shows that this positive effect of linguistic emotion is enhanced in beers named in French and Spanish. In German and Italian, negative effects are shown.
+					</p>
+					<div id="beername3" class="plotly-chart" align="center"></div>
 					<p>
+					In conclusion, positive linguistic sentiment in beer names has a significant impact on beer ratings, with particularly notable effects observed in French and Spanish beer names. This influence is especially pronounced among users in the United States and Canada.					</p>
                 </div>
             </div>
 
