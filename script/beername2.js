@@ -20,7 +20,7 @@ var trace2 = {
     visible: true
   },
   type: 'bar',
-  marker: {color : '#5596E6'}
+  marker: {color : '#5161d6'}
 };
 var data = [trace1, trace2];
 var layout = {barmode: 'group',   paper_bgcolor: 'transparent',
