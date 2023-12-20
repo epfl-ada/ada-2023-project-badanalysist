@@ -29,15 +29,15 @@ Plotly.newPlot('recommendation_similarity', [], {
       yref: 'paper',
       x: -0.3,
       y: 1,
-      sizex: 0.9,
-      sizey: 1.2,
+      sizex: 1.2,
+      sizey: 1.5,
     //   sizing: 'stretch',
       layer: 'below'
     }],
     layout: {
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
-        margin: { l: 10, r: 10, b: 50, t: 50, pad: 4 }, // Adjusted margins
+        margin: { l: 10, r: 10, b: 20, t: 20, pad: 4 }, // Adjusted margins
 
         xaxis: {
           visible: false, // Hides the x-axis
