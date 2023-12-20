@@ -1,6 +1,6 @@
 Plotly.newPlot('recommendation_keyword', [], {
     sliders: [{
-      pad: {t: 30},
+      pad: {t: 10},
       y: 0,
       currentvalue: {
         xanchor: 'right',
@@ -36,7 +36,7 @@ Plotly.newPlot('recommendation_keyword', [], {
     layout: {
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
-        margin: { l: 50, r: 50, b: 100, t: 50, pad: 4 }, // Adjusted margins
+        margin: { l: 10, r: 10, b: 100, t: 50, pad: 4 }, // Adjusted margins
 
         xaxis: {
           visible: false, // Hides the x-axis
