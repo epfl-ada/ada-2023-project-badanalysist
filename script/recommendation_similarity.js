@@ -30,7 +30,7 @@ Plotly.newPlot('recommendation_similarity', [], {
       y: 1,
       sizex: 0.9,
       sizey: 1.2,
-      sizing: 'stretch',
+    //   sizing: 'stretch',
       layer: 'below'
     }],
     layout: {
