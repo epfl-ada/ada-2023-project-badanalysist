@@ -5,10 +5,10 @@ Plotly.newPlot('recommendation_similarity', [], {
       currentvalue: {
         xanchor: 'right',
         font: {
-          size: 10
+          size: 15
         }
       },
-      len: 0.6,
+      len: 0.8,
       steps: [{
         label: 'American IPA',
         method: 'relayout',
@@ -27,7 +27,7 @@ Plotly.newPlot('recommendation_similarity', [], {
       source: 'img/similarity_ipa.jpg', // Initial image displayed
       xref: 'paper',
       yref: 'paper',
-      x: 0.1,
+      x: 0.6,
       y: 1,
       sizex: 0.9,
       sizey: 1.2,
