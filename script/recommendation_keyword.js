@@ -8,6 +8,7 @@ Plotly.newPlot('recommendation_keyword', [], {
           size: 10
         }
       },
+      len: 0.6,
       steps: [{
         label: 'Rich',
         method: 'relayout',
@@ -26,7 +27,7 @@ Plotly.newPlot('recommendation_keyword', [], {
       source: 'img/keyword_rich.jpg', // Initial image displayed
       xref: 'paper',
       yref: 'paper',
-      x: 0,
+      x: 0.1,
       y: 1,
       sizex: 0.9,
       sizey: 1.2,
@@ -49,6 +50,9 @@ Plotly.newPlot('recommendation_keyword', [], {
           showgrid: false,
           zeroline: false,
           showticklabels: false
+        },
+        sliders:{
+
         }
     }
   });
