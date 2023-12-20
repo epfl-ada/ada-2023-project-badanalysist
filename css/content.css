@@ -114,7 +114,7 @@ h3 {
     display: flex;  /* Aligns children in a row */
     justify-content: center; /* Centers children horizontally */
     align-items: stretch; /* Centers children vertically */
-    gap: 20px; /* Optional: Adds some space between the plots */
+    /* gap: 20px; Optional: Adds some space between the plots */
 }
   
   #heatmap1, #heatmap2 {
