@@ -237,3 +237,11 @@ body, html {
     width: 1000px; /* Adjust to the width of your chart */
 }
 
+
+section.end-notes {
+    margin: 40px auto 0;
+    max-width: 650px;
+    position: relative;
+    z-index: 5;
+    padding-top: 3rem!important;
+}
