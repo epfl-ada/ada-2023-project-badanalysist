@@ -37,7 +37,8 @@ Plotly.newPlot('recommendation_keyword', [], {
     layout: {
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
-        margin: { l: 0, r: 10, b: 25, t: 10, pad: 4 }, // Adjusted margins
+        title: 'Qualitative recommendation by Keyword', 
+        margin: { l: 0, r: 10, b: 35, t: 10, pad: 4 }, // Adjusted margins
 
         xaxis: {
           visible: false, // Hides the x-axis
