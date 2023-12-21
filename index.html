@@ -388,36 +388,33 @@
                 <div class="analysis">
                     <h4>Regional recommendations </h4>
                     <p>
-                        Given the fact that large location variety presents in both breweries and users, plus the significant impact of beer name language 
-                        on the ratings that we found, we realize that people from different regions may have a different beer preference.
-                        Therefore, on top of simply scoring different beer dimensions, we hope that this latent complex anthropological factor embedded in geographic
-                        location can also be captured by our recommendation logic. 
+                        Considering the wide geographic spread of both breweries and users, coupled with our discovery of the notable influence of beer name language on ratings, it's apparent that beer preferences can vary significantly across 
+                        different regions. Therefore, in our recommendation system, we aim to go beyond merely evaluating various beer characteristics. Our goal is to also incorporate the intricate anthropological factors inherent in geographic locations, 
+                        ensuring our recommendations resonate with the diverse tastes and cultural nuances of beer enthusiasts worldwide. 
                     </p>
                     <br>
                     <p>
-                        To achieve this, we first grouped the reviews entries into wider world regions based on user location. While different platforms were using differente
-                        names for same beers and styles, we mapped and normalized them to achieve a joint analysis across platforms. For each region, we ranked the beers based on
-                        a joint score of their average ratings and the number of reviews. Top 3 beers and styles are displayed for each region. Larger bubbles indicate more number 
-                        of reviews in that region, and darker color indicates higher share of reviews the hottest beer holds in that region.
+                        To achieve this, we first grouped the reviews entries into wider world regions based on user location. Recognizing that different platforms often used varying names for identical beers and styles, we undertook a mapping and normalization process 
+                        to enable a unified analysis across these platforms. For each region, beers were ranked based on a combined score comprising their average ratings and the volume of reviews. The top three beers and styles for each region are prominently displayed. 
+                        In our visual representation, larger bubbles signify a greater number of reviews from that region, while a darker hue indicates a higher proportion of reviews for the most popular beer in that region.
                     </p>
                     <br>
                     
                     <div id="regional_analysis" class="plotly-chart"></div>
 
                     <p>
-                        From the results, we can see that the top beers and styles in different regions are quite different. For example, if you are from the US, you might like, or 
-                        at least be quite familiar with Trappistes Rochefort 10, and if you are on a trip to South America, you might want to tryout the local taste like Falke Tripel Monasterium.
-                        Note that location distribution of reviews is not uniform, and it might be less representative for some regions. For example, there is only one entry of review in Africa. 
-                        Therefore, the results only reflect the statistics in this sample of data and should be taken with a grain of salt.
+                        From the results, we can see that the top beers and styles in different regions are quite different. For instance, in the United States, Trappistes Rochefort 10 is a familiar favorite, while those traveling to South America might find Falke Tripel Monasterium 
+                        an appealing local taste to explore. However, it's important to note that the distribution of reviews by location is uneven, which could affect the representativeness of the data for certain regions. A case in point is Africa, where we have only one review entry. 
+                        Consequently, these findings are reflective of the trends within our specific dataset and should be interpreted with caution, as they might not fully encapsulate broader regional preferences.
                     </p>
                     <br>
                     <h4>Qualitative and similarity recommendations </h4>
                     <p>
                         In addition to the regional recommendation, we also want to provide a more personalized recommendation based on the users' preferred beer quality. We extracted the 
                         top 10 descriptive words from previous reviews for each beer and style, and this kind of recommendation is based on containment relationships of this adjective set
-                        to the qualititive query. Some examples from our recommendation are displayed below. We also visualize the descriptive word cloud for each recommendation,
-                        in order to facilitate the user to get a more comprehensive sense about the recommended beers' quality before making the final decision. Similarly, if you've been pleased
-                        by a certain beer style, you can also find similar beers with our recommendation tool based on our previous beer similarity analysis.
+                        to the qualititive query. Some examples from our recommendation are displayed below. Furthermore, we enhance user experience by visualizing a word cloud of descriptive terms for each recommended beer. This approach allows users to gain a nuanced understanding 
+                        of the beer's characteristics before making their choice. Additionally, for those who have enjoyed a particular beer style and wish to explore similar options, our tool facilitates this exploration through an analysis of beer similarities previously conducted. 
+                        This feature is designed to further personalize and refine the recommendation process.
                     </p>
 
                     <div class="recommendation-container">
