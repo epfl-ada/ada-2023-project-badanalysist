@@ -27,17 +27,17 @@ Plotly.newPlot('recommendation_keyword', [], {
       source: 'img/keyword_rich.jpg', // Initial image displayed
       xref: 'paper',
       yref: 'paper',
-      x: -0.25,
+      x: 0,
       y: 1,
-      sizex: 1.6,
-      sizey: 2.0,
+      sizex: 1,
+      sizey: 1.2,
     //   sizing: 'stretch',
       layer: 'below'
     }],
     layout: {
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
-        margin: { l: 5, r: 0, b: 10, t: 10, pad: 4 }, // Adjusted margins
+        margin: { l: 0, r: 10, b: 25, t: 10, pad: 4 }, // Adjusted margins
 
         xaxis: {
           visible: false, // Hides the x-axis

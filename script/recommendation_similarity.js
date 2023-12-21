@@ -37,7 +37,7 @@ Plotly.newPlot('recommendation_similarity', [], {
     layout: {
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
-        margin: { l: 0, r: 10, b: 15, t: 10, pad: 4 }, // Adjusted margins
+        margin: { l: 0, r: 10, b: 25, t: 10, pad: 4 }, // Adjusted margins
 
         xaxis: {
           visible: false, // Hides the x-axis
