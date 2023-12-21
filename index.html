@@ -401,15 +401,22 @@
                         of reviews in that region, and darker color indicates higher share of reviews the hottest beer holds in that region.
                     </p>
                     <br>
+                    
+                    <div id="regional_analysis" class="plotly-chart"></div>
+
                     <p>
                         From the results, we can see that the top beers and styles in different regions are quite different. For example, if you are from the US, you might like, or 
                         at least be quite familiar with Trappistes Rochefort 10, and if you are on a trip to South America, you might want to tryout the local taste like Falke Tripel Monasterium.
                         Note that location distribution of reviews is not uniform, and it might be less representative for some regions. For example, there is only one entry of review in Africa. 
                         Therefore, the results only reflect the statistics in this sample of data and should be taken with a grain of salt.
                     </p>
-
-                    
-                    <div id="regional_analysis" class="plotly-chart"></div>
+                    <br>
+                    <h4>Qualitative and similarity recommendations </h4>
+                    <p>
+                        In addition to the regional recommendation, we also want to provide a more personalized recommendation based on the users' preferred beer quality. We extracted the 
+                        top 10 descriptive words from previous reviews for each beer and style, and this kind of recommendation is based on containment relationships of this adjective set
+                        to the qualititive query. For instance, if you enjoy 
+                        .
 
                     <p>text</p>
                     <div class="recommendation-container">

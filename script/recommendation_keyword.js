@@ -37,7 +37,7 @@ Plotly.newPlot('recommendation_keyword', [], {
     layout: {
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
-        margin: { l: 10, r: 5, b: 10, t: 10, pad: 4 }, // Adjusted margins
+        margin: { l: 5, r: 0, b: 10, t: 10, pad: 4 }, // Adjusted margins
 
         xaxis: {
           visible: false, // Hides the x-axis
