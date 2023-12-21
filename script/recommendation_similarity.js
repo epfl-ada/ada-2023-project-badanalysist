@@ -58,6 +58,7 @@ Plotly.newPlot('recommendation_similarity', [], {
 Plotly.relayout('recommendation_similarity', {
     paper_bgcolor: 'transparent',
     plot_bgcolor: 'transparent',
+    title: 'Style recommendation by Similarity',
     // ... other layout configurations
     xaxis: {
         visible: false, // Hides the x-axis

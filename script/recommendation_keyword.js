@@ -61,6 +61,7 @@ Plotly.newPlot('recommendation_keyword', [], {
 Plotly.relayout('recommendation_keyword', {
     paper_bgcolor: 'transparent',
     plot_bgcolor: 'transparent',
+    title: 'Qualitative recommendation by Keyword', 
     // ... other layout configurations
     xaxis: {
         visible: false, // Hides the x-axis
