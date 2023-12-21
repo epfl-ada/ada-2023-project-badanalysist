@@ -58,8 +58,8 @@
                     from BeerAdvocate and RateBeer.
                     Our exploration uncovers not just the popularity of beer and the influence of naming on ratings,
                     but also delves into the similarities between styles. Utilizing methods like K-means clustering,
-                    sentiment analysis, and graph network modeling, we analyze over a million beer ratings to
-                    comprehensively define beer styles.
+                    sentiment analysis, and word2vec, we analyze over a million beer ratings to
+                    comprehensively define beer similarities.
                     From clustering regional preferences to exploring the sentiment and language in beer names,
                     and studying textual similarities between beer styles,
                     our project merges statistical methods with natural language processing techniques to offer a
@@ -100,6 +100,11 @@
                         The most notable patterns are:
                     </p>
                     <ul>
+                        <li><b>Palate:</b> The palate ratings show a more varied distribution, with RateBeer displaying
+                            a bimodal distribution, suggesting two common ratings at which beers are evaluated, whereas
+                            BeerAdvocate's distribution is more right-skewed.</li>
+                        <li><b>Taste:</b> Taste ratings are crucial, and here both sites show a right-skewed
+                            distribution, indicating a tendency towards higher ratings for taste.</li>
                         <li><b>ABV:</b> The distribution for ABV appears to be left-skewed for both RateBeer and
                             BeerAdvocate, indicating that most beers have a lower alcohol content.</li>
                         <li><b>Appearance:</b> Both sites show a high frequency of beers with higher appearance ratings,
@@ -107,11 +112,6 @@
                         <li><b>Aroma:</b> The distributions for aroma ratings are quite similar between the two sites,
                             with a slight right skew, suggesting that users generally rate the aroma of beers
                             positively.</li>
-                        <li><b>Palate:</b> The palate ratings show a more varied distribution, with RateBeer displaying
-                            a bimodal distribution, suggesting two common ratings at which beers are evaluated, whereas
-                            BeerAdvocate's distribution is more right-skewed.</li>
-                        <li><b>Taste:</b> Taste ratings are crucial, and here both sites show a right-skewed
-                            distribution, indicating a tendency towards higher ratings for taste.</li>
                     </ul>
                     <div id="rate-dist" class="plotly-chart"></div>
                     <div class="spacing"></div>
@@ -237,7 +237,7 @@
                         <br>
                     </p>
                     <h4>Table for a subset beer style similarities</h4>
-                    <p>In the dataset, there are 104 beer styles. Here we select 5 beer styles to analyze the similarity
+                    <p>In the dataset, there are 104 beer styles with full explanation for their beer styles. Here we select 5 beer styles to analyze the similarity
                         results</p>
                     <div id="similarity-table" class="plotly-chart"></div>
                     <h4>Analysis for a subset beer style similarities</h4>
