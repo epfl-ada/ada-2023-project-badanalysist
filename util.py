@@ -173,4 +173,77 @@ world_area_mapping = {'United States': 'US',
     'Thailand': 'Asia','Turkey': 'Europe',  'Ukraine': 'Europe','Uruguay': 'South America','Vietnam': 'Asia'
 }
 
+# store the top 10 adjective keywords for each beer_name based on ['text'] in a column as a list
+from nltk.tokenize import word_tokenize
+from nltk import pos_tag
+from nltk.corpus import stopwords
+from collections import Counter
+# Function to filter and count adjectives for each beer_name
+def get_top_adjectives_for_beer_name(beer_name, df_ba, df_rb, top_n=10):
+    # Filter reviews for the given beer_name
+    beer_name_reviews_ba = df_ba[df_ba['beer_name'] == beer_name]['text'].dropna()
+    beer_name_reviews_rb = df_rb[df_rb['beer_name'] == beer_name]['text'].dropna()
+
+    # Tokenize, POS tag, and filter adjectives
+    adjectives_ba = []
+    adjectives_rb = []
+    for review in beer_name_reviews_ba:
+        words = word_tokenize(review.lower())
+        nltk_stopwords = set(stopwords.words('english'))
+        # manually add uninformativewords to stopwords
+        uninformativewords = ['nice','good','great','little','full']
+        nltk_stopwords.update(uninformativewords)
+        words = [word for word in words if word.isalpha() and word not in nltk_stopwords]
+        tagged = pos_tag(words)
+        adjectives_ba.extend([word for word, tag in tagged if tag in ['JJ', 'JJR', 'JJS']])
+    for review in beer_name_reviews_rb:
+        words = word_tokenize(review.lower())
+        nltk_stopwords = set(stopwords.words('english'))
+        uninformativewords = ['nice','good','great','little','full']
+        nltk_stopwords.update(uninformativewords)
+        words = [word for word in words if word.isalpha() and word not in nltk_stopwords]
+        tagged = pos_tag(words)
+        adjectives_rb.extend([word for word, tag in tagged if tag in ['JJ', 'JJR', 'JJS']])
+    
+    adjectives = adjectives_ba + adjectives_rb
+
+    # Count and select top N adjectives
+    adjective_counts = Counter(adjectives)
+    top_adjectives = [adj for adj, _ in adjective_counts.most_common(top_n)]
+
+    return top_adjectives
+
+# Function to filter and count adjectives for each style
+def get_top_adjectives_for_style(style, df_ba, df_rb, top_n=10):
+    # Filter reviews for the given style
+    style_reviews_ba = df_ba[df_ba['Modified Style Name'] == style]['text'].dropna()
+    style_reviews_rb = df_rb[df_rb['Modified Style Name'] == style]['text'].dropna()
+
+    # Tokenize, POS tag, and filter adjectives
+    adjectives_ba = []
+    adjectives_rb = []
+    for review in style_reviews_ba:
+        words = word_tokenize(review.lower())
+        nltk_stopwords = set(stopwords.words('english'))
+        uninformativewords = ['nice','good','great','little','full']
+        nltk_stopwords.update(uninformativewords)
+        words = [word for word in words if word.isalpha() and word not in nltk_stopwords]
+        tagged = pos_tag(words)
+        adjectives_ba.extend([word for word, tag in tagged if tag in ['JJ', 'JJR', 'JJS']])
+    for review in style_reviews_rb:
+        words = word_tokenize(review.lower())
+        nltk_stopwords = set(stopwords.words('english'))
+        uninformativewords = ['nice','good','great','little','full']
+        nltk_stopwords.update(uninformativewords)
+        words = [word for word in words if word.isalpha() and word not in nltk_stopwords]
+        tagged = pos_tag(words)
+        adjectives_rb.extend([word for word, tag in tagged if tag in ['JJ', 'JJR', 'JJS']])
+    adjectives = adjectives_ba + adjectives_rb
+
+    # Count and select top N adjectives
+    adjective_counts = Counter(adjectives)
+    top_adjectives = [adj for adj, _ in adjective_counts.most_common(top_n)]
+
+    return top_adjectives
+
 
