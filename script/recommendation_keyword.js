@@ -29,7 +29,7 @@ Plotly.newPlot('recommendation_keyword', [], {
       yref: 'paper',
       x: -0.25,
       y: 1,
-      sizex: 1.7,
+      sizex: 1.6,
       sizey: 2.0,
     //   sizing: 'stretch',
       layer: 'below'

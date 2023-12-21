@@ -29,7 +29,7 @@ Plotly.newPlot('recommendation_similarity', [], {
       yref: 'paper',
       x: -0.15,
       y: 1,
-      sizex: 1.7,
+      sizex: 1.6,
       sizey: 2.0,
     //   sizing: 'stretch',
       layer: 'below'
