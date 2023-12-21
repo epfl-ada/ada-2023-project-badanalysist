@@ -29,8 +29,8 @@ Plotly.newPlot('recommendation_similarity', [], {
       yref: 'paper',
       x: -0.15,
       y: 1,
-      sizex: 1.3,
-      sizey: 1.6,
+      sizex: 1.6,
+      sizey: 1.9,
     //   sizing: 'stretch',
       layer: 'below'
     }],
