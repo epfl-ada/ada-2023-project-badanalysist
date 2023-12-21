@@ -388,17 +388,24 @@
                 <div class="analysis">
                     <h4>Regional recommendations </h4>
                     <p>
-                        Given the fact that large location variety present in both breweries and users, plus the significant impact of beer name language 
-                        on the ratings, we realize that people from different regions may have a different beer preference. We hope to 
+                        Given the fact that large location variety presents in both breweries and users, plus the significant impact of beer name language 
+                        on the ratings that we found, we realize that people from different regions may have a different beer preference.
                         Therefore, on top of simply scoring different beer dimensions, we hope that this latent complex anthropological factor embedded in geographic
-                         location can also be captured by our recommendation logic. 
+                        location can also be captured by our recommendation logic. 
                     </p>
                     <br>
                     <p>
-                        To achieve this, we first grouped the reviews entries into wider world regions based on user location. To achieve a joint analysis 
-                        across different platforms tracking the same products, we mapped the same beers by assigning them a uniform ID in our matched data.
-                        As for the different style names used in different platforms, we normalized them by converting into  
-
+                        To achieve this, we first grouped the reviews entries into wider world regions based on user location. While different platforms were using differente
+                        names for same beers and styles, we mapped and normalized them to achieve a joint analysis across platforms. For each region, we ranked the beers based on
+                        a joint score of their average ratings and the number of reviews. Top 3 beers and styles are displayed for each region. Larger bubbles indicate more number 
+                        of reviews in that region, and darker color indicates higher share of reviews the hottest beer holds in that region.
+                    </p>
+                    <br>
+                    <p>
+                        From the results, we can see that the top beers and styles in different regions are quite different. For example, if you are from the US, you might like, or 
+                        at least be quite familiar with Trappistes Rochefort 10, and if you are on a trip to South America, you might want to tryout the local taste like Falke Tripel Monasterium.
+                        Note that location distribution of reviews is not uniform, and it might be less representative for some regions. For example, there is only one entry of review in Africa. 
+                        Therefore, the results only reflect the statistics in this sample of data and should be taken with a grain of salt.
                     </p>
 
                     
