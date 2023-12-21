@@ -27,17 +27,17 @@ Plotly.newPlot('recommendation_similarity', [], {
       source: 'img/similarity_ipa.jpg', // Initial image displayed
       xref: 'paper',
       yref: 'paper',
-      x: -0.15,
+      x: 0,
       y: 1,
-      sizex: 1.6,
-      sizey: 2.0,
+      sizex: 1,
+      sizey: 1.2,
     //   sizing: 'stretch',
       layer: 'below'
     }],
     layout: {
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
-        margin: { l: 0, r: 10, b: 10, t: 10, pad: 4 }, // Adjusted margins
+        margin: { l: 0, r: 10, b: 15, t: 10, pad: 4 }, // Adjusted margins
 
         xaxis: {
           visible: false, // Hides the x-axis
