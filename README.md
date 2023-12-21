@@ -27,7 +27,7 @@ We plan to use k-means clustering integrated with regression analysis to categor
 ### Task 2: Beer Name Reflect Beer Flavor
 Do beer names like "Tokyo" influence users' focus on oriental spices like coriander? We investigate how a beer's name, with its emotional tone (ranging from descriptive, like 'Co-op Wheat Beer,' to creative, such as 'Pheasantry Dancing Dragonfly') and language, may influence reviews.
 
-For sentiment analysis, we employ Hugging Face's transformers library with a pre-trained distilbert-base-uncased-finetuned-sst-2-english model. To identify language, we use the langdetect library based on Google's language-detection library.
+For sentiment analysis, we employ Hugging Face's transformers library with a pre-trained bert-base-multilingual-uncased-sentiment model. To identify language, we use the langdetect library based on Google's language-detection library.
 OLS regression finds a significant positive correlation (1% confidence level) in English names, where positive sentiment leads to higher user ratings. Robust tests will further explore the composition of ratings and review text.
 
 ### Task 3: Beer Style Similarities
