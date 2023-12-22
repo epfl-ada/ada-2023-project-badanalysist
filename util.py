@@ -265,5 +265,208 @@ def find_similar_styles(query, data_frame):
         return data_frame[data_frame["Modified Style Name"] == query]["top_10_similar_styles"].tolist()[0]
     return None
 
+# Function to detect the language of a text using the langdetect library
+def detect_language(text):
+    try:
+        # Attempt to detect the language
+        lang = detect(text)
+        return lang
+    except:
+        # Handle cases where language detection fails, returning "unknown"
+        return "unknown"
 
+def language_dis(ratings_rb_withid_lang):
+    """
+    Calculate the percentage distribution of languages in the 'ratings_rb_withid_lang' DataFrame.
 
+    Args:
+    ratings_rb_withid_lang (pd.DataFrame): DataFrame containing beer ratings with language information.
+
+    Returns:
+    pd.DataFrame: DataFrame with the percentage distribution of languages, focusing on the top 10 languages.
+    """
+
+    # Calculate the percentage of each language in the DataFrame
+    language_percentage_per_language_rb = ratings_rb_withid_lang.groupby('language')['language'].count() / len(ratings_rb_withid_lang) * 100
+    language_percentage_rb = language_percentage_per_language_rb.to_frame()
+    language_percentage_rb.columns = ['per']
+    language_percentage_rb = language_percentage_rb.reset_index()
+
+    # Focus on the top 10 languages
+    language_percentage_rb = language_percentage_rb[language_percentage_rb['language'].isin(top10_lan)]
+
+    # Calculate the percentage for 'other' languages and add it to the DataFrame
+    perc_other = 100 - sum(language_percentage_rb['per'])
+    language_percentage_rb.loc[0] = ['other', perc_other]
+
+    # Sort the DataFrame by the "language" column
+    language_percentage_rb = language_percentage_rb.sort_values(by='language')
+
+    # Print the unique percentages (for debugging or analysis purposes)
+    print(list(language_percentage_rb["per"].unique()))
+
+    return language_percentage_rb
+
+### this part is copied from Yihan's part
+
+def extract_country(location):
+    # Mapping of countries and US states to world areas
+    world_area_mapping = {
+        'United States': 'US',
+        'Spain': 'Europe',
+        'Canada': 'Canada',
+        'Sweden': 'Europe',
+        'Australia': 'Australia',  # Note: Geopolitically, Australia is often considered part of the Asia-Pacific region
+        'Norway': 'Europe',
+        'Malaysia': 'Asia',
+        'Poland': 'Europe',
+        'Switzerland': 'Europe',
+        'France': 'Europe',
+        'Germany': 'Europe',
+        'Croatia': 'Europe',
+        'Ireland': 'Europe',
+        'Mexico': 'North America',  # Assuming North America is included in 'US' as per your request
+        'Japan': 'Asia',
+        'Finland': 'Europe',
+        'Russia': 'Europe',  # Russia is partly in Europe and Asia, but often considered European for simplicity
+        'Italy': 'Europe',
+        'Greece': 'Europe',
+        'Estonia': 'Europe',
+        'Denmark': 'Europe',
+        'Brazil': 'South America',  # Assuming South America is included in 'US' as per your request
+        'Israel': 'Asia',
+        'Vietnam': 'Asia',
+        'Thailand': 'Asia',
+        'Czech Republic': 'Europe',
+        'Belgium': 'Europe',
+        'Lebanon': 'Asia',
+        'South Africa': 'Africa',  # Assuming Africa is included in 'US' as per your request
+        'Hungary': 'Europe'
+    }
+    if 'United States' in location:
+        return 'United States'
+    else:
+        return location
+    
+def set_dummy(ratings_rb_withid2):
+    ratings_rb_withid2 = ratings_rb_withid2.dropna(subset=['NameSentiment', 'language', 'style', 'rating','location','country'])
+    ratings_rb_withid2 = ratings_rb_withid2[ratings_rb_withid2['NameSentiment'] != 0]
+    # Set dummies
+    style_dummies = pd.get_dummies(ratings_rb_withid2['style'], prefix='style', drop_first=True)
+    language_dummies = pd.get_dummies(ratings_rb_withid2['language'], prefix='language', drop_first=True)
+    location_dummies = pd.get_dummies(ratings_rb_withid2['location'], prefix='location', drop_first=True)
+    country_dummies = pd.get_dummies(ratings_rb_withid2['country'], prefix='country', drop_first=True)
+
+    
+    for i in top10_lan:
+        # Create 'language_xx' dummy variable for english/french/de...
+        ratings_rb_withid2[i] = (ratings_rb_withid2['language'] == i).astype(int) 
+        # Create a new variable by multiplying 'language_en' with 'NameSentiment'
+        ratings_rb_withid2[i+'*NameSentiment'] = ratings_rb_withid2[i] * ratings_rb_withid2['NameSentiment']
+        
+    return ratings_rb_withid2, style_dummies,language_dummies,location_dummies,country_dummies
+
+# we want to get the CI of languages
+def CI_reg1(model1_rb,top10_lan):
+        # Calculate the 95% confidence interval (CI) for model1_rb parameters
+        CI_model1_rb = model1_rb.conf_int(alpha=0.05, cols=None)  # 5% CI
+
+        # Reset the index to make 'language' a regular column
+        CI_model1_rb = CI_model1_rb.reset_index()
+
+        # Select rows containing 'language' in the 'index' column
+        CI_model1_rb = CI_model1_rb[CI_model1_rb['index'].isin(top10_lan)]
+
+        # Rename columns for clarity
+        CI_model1_rb = CI_model1_rb.rename({'index': 'Language', 0: 'Inf', 1: 'Sup'}, axis=1)
+
+        # Calculate the midpoint ('Spot') of the confidence interval
+        CI_model1_rb['Spot'] = (CI_model1_rb['Inf'] + CI_model1_rb['Sup']) / 2
+
+        # Calculate the half-width of the confidence interval ('diff' divided by 2)
+        CI_model1_rb['diff'] = (CI_model1_rb['Sup'] - CI_model1_rb['Inf']) / 2
+
+        # Define a mapping of language code to full name
+        language_mapping = {
+            'en': 'English',
+            'de': 'German',
+            'fr': 'French',
+            'nl': 'Dutch',
+            'ro': 'Romanian',
+            'id': 'Indonesian',
+            'it': 'Italian',
+            'da': 'Danish',
+            'no': 'Norwegian',
+            'es': 'Spanish'
+        }
+        CI_model1_rb['FullLanguage'] = CI_model1_rb['Language'].map(language_mapping)
+        
+        # Extract lists for further analysis or presentation
+        print(list(CI_model1_rb['FullLanguage']))
+        print(list(CI_model1_rb['Spot']))
+        print(list(CI_model1_rb['diff']))
+
+        # Display the first few rows of the resulting DataFrame
+        return CI_model1_rb
+    
+# Updated function definition with an argument
+def CI_reg2(CI_model2_rb):
+    # Rename columns for clarity
+    CI_model1_rb = CI_model2_rb.rename({'index': 'Area', 0: 'Inf', 1: 'Sup'}, axis=1)
+
+    # Calculate the midpoint ('Spot') of the confidence interval
+    CI_model1_rb['Spot'] = (CI_model1_rb['Inf'] + CI_model1_rb['Sup']) / 2
+
+    # Calculate the half-width of the confidence interval ('diff' divided by 2)
+    CI_model1_rb['diff'] = (CI_model1_rb['Sup'] - CI_model1_rb['Inf']) / 2
+        
+    # Extract lists for further analysis or presentation
+    print("Areas:", list(CI_model1_rb['Area']))
+    print("Midpoints:", list(CI_model1_rb['Spot']))
+    print("Half-widths:", list(CI_model1_rb['diff']))
+    return CI_model1_rb
+
+# we want to get the CI of NameSentiment
+def CI_reg3(model1_rb):
+        # Calculate the 95% confidence interval (CI) for model1_rb parameters
+        CI_model1_rb = model1_rb.conf_int(alpha=0.05, cols=None)  # 5% CI
+
+        # Reset the index to make 'language' a regular column
+        CI_model1_rb = CI_model1_rb.reset_index()
+
+        # Select rows containing 'language' in the 'index' column
+        CI_model1_rb = CI_model1_rb[CI_model1_rb['index'].str.contains('NameSentiment')]
+
+        # Rename columns for clarity
+        CI_model1_rb = CI_model1_rb.rename({'index': 'NameSentiment', 0: 'Inf', 1: 'Sup'}, axis=1)
+
+        # Calculate the midpoint ('Spot') of the confidence interval
+        CI_model1_rb['Spot'] = (CI_model1_rb['Inf'] + CI_model1_rb['Sup']) / 2
+
+        # Calculate the half-width of the confidence interval ('diff' divided by 2)
+        CI_model1_rb['diff'] = (CI_model1_rb['Sup'] - CI_model1_rb['Inf']) / 2
+        
+        # Extract lists for further analysis or presentation
+        print(list(CI_model1_rb['NameSentiment']))
+        print(list(CI_model1_rb['Spot']))
+        print(list(CI_model1_rb['diff']))
+
+        # Display the first few rows of the resulting DataFrame
+        return CI_model1_rb
+    
+# Updated function definition with an argument
+def CI_reg4(CI_model2_rb):
+    # Rename columns for clarity
+    CI_model1_rb = CI_model2_rb.rename({'index': 'Rating', 0: 'Inf', 1: 'Sup'}, axis=1)
+
+    # Calculate the midpoint ('Spot') of the confidence interval
+    CI_model1_rb['Spot'] = (CI_model1_rb['Inf'] + CI_model1_rb['Sup']) / 2
+
+    # Calculate the half-width of the confidence interval ('diff' divided by 2)
+    CI_model1_rb['diff'] = (CI_model1_rb['Sup'] - CI_model1_rb['Inf']) / 2
+        
+    # Extract lists for further analysis or presentation
+    print("Rating categories:", list(CI_model1_rb['Rating']))
+    print("Midpoints:", list(CI_model1_rb['Spot']))
+    print("Half-widths:", list(CI_model1_rb['diff']))
+    return CI_model1_rb
