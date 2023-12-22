@@ -52,7 +52,7 @@ We're creating a beer recommendation tool that utilizes beer review platform dat
 
 ## Team Organization
 - Siyuan: basic statistic visualization; ...
-- Zhixun: Beer name reflects beer flavor; sentiment analysis for beer name; identify the language of beer name
+- Zhixun: beer name reflects beer flavor: sentiment analysis for beer name; identify the language of beer name; linear regression and visualization
 - Xinyi: web set up and design; basic statistic visualization and analysis; beer style similarity visualization and analysis;
 - Yihan: recommendation logic design, implementation and visualization, regional preference analysis and visualization, descriptive keyword extraction
 
