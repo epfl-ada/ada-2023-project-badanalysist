@@ -49,13 +49,8 @@ We're creating a beer recommendation tool that utilizes beer review platform dat
 **22.12.2023** Milestone 3 Deadline
 
 ## Team Organization
-<<<<<<< HEAD
-- Siyuan: Basic statistic visualization; Task 1
-- Zhixun: Task 2
-=======
-- Siyuan: basic statistic visualization; ...
-- Zhixun: beer name reflects beer flavor: sentiment analysis for beer name; identify the language of beer name; linear regression and visualization
->>>>>>> 8ba2460be888aebfb9dc487829e8fdd71e5f8792
+- Siyuan: basic statistic visualization; implementation of cosine k-means, beer clustering and analysis;
+- Zhixun: beer name reflects beer flavor: sentiment analysis for beer name; identify the language of beer name; linear regression and visualization;
 - Xinyi: web set up and design; basic statistic visualization and analysis; beer style similarity visualization and analysis;
 - Yihan: recommendation logic design, implementation and visualization, regional preference analysis and visualization, descriptive keyword extraction
 
