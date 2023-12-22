@@ -37,9 +37,7 @@ Calculating the "distance" between different beer styles based on their textual 
 Since we cannot access the cloud-based graph database and the total amount of beer product data is too large to be deployed on GitHub, we have removed the part about setting up the graph database.
 
 ### Task 5: Recommendation Function
-We're creating a beer recommendation tool that utilizes beer review platform data, ideal for users with limited knowledge of beers. We plan to offer suggestions based on both basic criteria such as style, brewery, ABV, and also more comprehensive factors such as popularity and qualitative attributes like taste. Our initial analysis of regional beer preferences also inspires tailored recommendations catering both locals and exotic tourists.
-
-Beers will be ranked by popularity, both globally and regionally, using review counts and ratings, and labeled with key features. Using NLP tools like nltk, we'll extract keywords from reviews for enhanced recommendations and intuitive WordCloud visualizations. Additionally, a "you might also like" feature will suggest beers based on style similarities. The current function suggests beers based on keywords and regions, with more criteria to be added later.
+We're creating a beer recommendation tool that utilizes beer review platform data, offering suggestions based on based on personalized demands and different criteria and qualitative attributes like taste. Our analysis of regional beer review data reveals world-wide different beer and style preference. The beer similarity analyzed in Task 3 is also used here to achieve an association-like recommendation function. Besides, using NLP tools like nltk, we extract descriptive keywords from reviews for recommendations to meet qualitative queries demands. Intuitive WordCloud visualizations are also enabled by this method to improve user experience. Non-informative words like "good", "little", "full", etc have been removed from the keyword list and visualizations.
 
 ## Timeline
 **16.11.2023** Data Handling and Preprocessing & Initial Exploratory Data Analysis
@@ -56,7 +54,7 @@ Beers will be ranked by popularity, both globally and regionally, using review c
 - Siyuan: basic statistic visualization; ...
 - Zhixun: task 2
 - Xinyi: web set up and design; basic statistic visualization and analysis; beer style similarity visualization and analysis;
-- Yihan: task 5
+- Yihan: recommendation logic design, implementation and visualization, regional preference analysis and visualization, descriptive keyword extraction
 
 Each team member will be responsible for creating the final visualizations for their respective task, completing the data story.
 
