@@ -338,19 +338,19 @@
                 <div class="blurb" id="blurb4">
                     <h3 class="slide-header">Beer Name, Beer Flavor</h3>
                     <p>
-					The impact of beer taste on ratings is easy to understand and obvious. But at the same time, we are thinking, are there other hidden factors that will affect the rating?
-					<br>
-					<br>
 					Do beer names like "Tokyo" influence users' focus on oriental spices like coriander? We investigate how a beer's name, with its emotional tone (ranging from descriptive, like 'Co-op Wheat Beer,' to creative, such as 'Pheasantry Dancing Dragonfly') and language, may influence reviews.
 					<!-- To identify language, we use the langdetect library based on Google's language-detection library. For sentiment analysis, we employ Hugging Face's transformers library with a pre-trained bert-base-multilingual-uncased-sentiment model. -->
 					</p>
                 </div>
                 <div class="analysis">
-                    <p>
-					Among beer names, English accounts for the largest proportion, reaching about 30%. we take beer names in English, French, German, Italian, Dutch, and Spanish as the main research objects.
+					<p>
+					The impact of beer taste on ratings is easy to understand and obvious. But at the same time, we are thinking, are there other hidden factors that will affect the rating?
 					</p>
-                    <div id="language_dis" class="plotly-chart" align="center"></div>
 					<h4> The impact of different languages of beer on ratings </h4>
+                    <p>
+					We first looked at the language of the beer names. Among beer names, English accounts for the largest proportion, reaching about 30%. we take beer names in English, French, German, Italian, Dutch, and Spanish as the main research objects.
+					</p>
+                    <div id="language_dis" class="plotly-chart" align="center"></div>				
 					<p>
 					We found that the language of a beer’s name had a significant impact on its rating. Among them, compared with other languages, the distribution of German and Dutch beer names can increase the beer score by 0.04, 0.05, at a 5% confidence level.
 					<br>
@@ -360,7 +360,10 @@
 					<div id="beername1" class="plotly-chart" align="center"></div>
 					<h4> The impact of sentiment conveyed by beer on ratings </h4>
 					<p>
-					We divided the linguistic sentiment of beer names into five levels from 1 to 5. We found that, overall, the sentiment of positive beer names had a significant positive impact on their ratings. Each increase in emotional level can increase the beer rating by 0.01.
+					In addition to language, we delve deeper into the linguistic sentiment conveyed by beer. We divided the linguistic sentiment of beer names into five levels from 1 to 5. 
+					<br>
+					<br>
+					We found that, overall, the sentiment of positive beer names had a significant positive impact on their ratings. Each increase in emotional level can increase the beer rating by 0.01.
 					<br>
 					<br>
 					In subsamples from different users' locations, this positive impact of language emotion is significant for users in the United States and Canada, but not significant in Europe.
@@ -368,11 +371,15 @@
 					<div id="beername2" class="plotly-chart" align="center"></div>
 					<p>
 					Then, we replaced the explained variable (rating) with beer characteristics: abv, appearance, aroma, palate, and taste. We found that positive beer verbal emotions have a significant positive impact on appearance, aroma, palate, and taste, especially taste. (There is no doubt that abv is objectively unaffected.)
+					A significant increase in flavor resulted in an increase in ratings. This result is consistent with our analysis in the previous section.
 					</p>
 					<div id="beername4" class="plotly-chart" align="center"></div>
 					<h4> The impact of the sentiment conveyed by beer names in various languages on ratings </h4>					
 					<p>
-					We divided the linguistic sentiment of beer names into five levels from 1 to 5. We found that, overall, the verbal sentiment of positive beer names had a significant positive impact on their ratings. Each increase in emotional level can increase the beer rating by 0.02.
+					Furthermore, if we focus on both language and language emotion, what will we find?
+					<br>
+					<br>
+					We found that, overall, the verbal sentiment of positive beer names had a significant positive impact on their ratings. Each increase in emotional level can increase the beer rating by 0.02.
 					<br>
 					<br>
 					The intersection of linguistic emotion and language shows that this positive effect of linguistic emotion is enhanced in beers named in French and Spanish. In German and Italian, negative effects are shown.
