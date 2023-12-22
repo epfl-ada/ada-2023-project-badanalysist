@@ -24,7 +24,7 @@ In our initial analysis of the rating dataset, we have identified key attributes
 
 We plan to use k-means clustering integrated with regression analysis to categorize beers based on these attributes and assess their impact on ratings and regional preferences. This approach will inform targeted customer recommendations and help breweries improve their products' appeal.
 
-### Task 2: Beer Name Reflect Beer Flavor
+### Task 2: Beer Name Reflects Beer Flavor
 Do beer names like "Tokyo" influence users' focus on oriental spices like coriander? We investigate how a beer's name, with its emotional tone (ranging from descriptive, like 'Co-op Wheat Beer,' to creative, such as 'Pheasantry Dancing Dragonfly') and language, may influence reviews.
 
 For sentiment analysis, we employ Hugging Face's transformers library with a pre-trained bert-base-multilingual-uncased-sentiment model. To identify language, we use the langdetect library based on Google's language-detection library.
@@ -52,7 +52,7 @@ We're creating a beer recommendation tool that utilizes beer review platform dat
 
 ## Team Organization
 - Siyuan: basic statistic visualization; ...
-- Zhixun: task 2
+- Zhixun: Beer name reflects beer flavor; sentiment analysis for beer name; identify the language of beer name
 - Xinyi: web set up and design; basic statistic visualization and analysis; beer style similarity visualization and analysis;
 - Yihan: recommendation logic design, implementation and visualization, regional preference analysis and visualization, descriptive keyword extraction
 
