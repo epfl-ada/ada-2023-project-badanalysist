@@ -10,6 +10,10 @@ import time
 from fuzzywuzzy import process
 import requests
 from bs4 import BeautifulSoup
+from nltk.tokenize import word_tokenize
+from nltk import pos_tag
+from nltk.corpus import stopwords
+from collections import Counter
 
  
 def split_matched_data(data):
@@ -174,10 +178,7 @@ world_area_mapping = {'United States': 'US',
 }
 
 # store the top 10 adjective keywords for each beer_name based on ['text'] in a column as a list
-from nltk.tokenize import word_tokenize
-from nltk import pos_tag
-from nltk.corpus import stopwords
-from collections import Counter
+
 # Function to filter and count adjectives for each beer_name
 def get_top_adjectives_for_beer_name(beer_name, df_ba, df_rb, top_n=10):
     # Filter reviews for the given beer_name
@@ -245,5 +246,24 @@ def get_top_adjectives_for_style(style, df_ba, df_rb, top_n=10):
     top_adjectives = [adj for adj, _ in adjective_counts.most_common(top_n)]
 
     return top_adjectives
+
+
+
+def get_popular_items(region, column_name, data_frame, print_message):
+    items = data_frame[data_frame["region"] == region][column_name].tolist()
+    print(print_message, items)
+    return items
+
+def get_items_by_keyword(keyword, category, data_frame, column_name):
+    items = data_frame[data_frame["keywords"].apply(lambda x: isinstance(x, list) and keyword in x)][column_name].tolist()
+    return items[:3]
+
+def find_similar_styles(query, data_frame):
+    if query in data_frame["original_style_name"].tolist():
+        return data_frame[data_frame["original_style_name"] == query]["top_10_similar_styles"].tolist()[0]
+    elif query in data_frame["Modified Style Name"].tolist():
+        return data_frame[data_frame["Modified Style Name"] == query]["top_10_similar_styles"].tolist()[0]
+    return None
+
 
 
