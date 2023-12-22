@@ -46,7 +46,7 @@
             <div class="box" id="topic3">Beer Popularity and Taste Preference</div>
             <div class="box" id="topic4">Beer Name, Beer Flavor</div>
             <div class="box" id="topic5">Let's Recommend!</div>
-			<div class="box" id="topic6">Conclusion</div>
+            <div class="box" id="topic6">Conclusion</div>
         </div>
 
         <!-- Edit Here -->
@@ -238,7 +238,8 @@
                         <br>
                     </p>
                     <h4>Table for a subset beer style similarities</h4>
-                    <p>In the dataset, there are 104 beer styles with full explanation for their beer styles. Here we select 5 beer styles to analyze the similarity
+                    <p>In the dataset, there are 104 beer styles with full explanation for their beer styles. Here we
+                        select 5 beer styles to analyze the similarity
                         results</p>
                     <div id="similarity-table" class="plotly-chart"></div>
                     <h4>Analysis for a subset beer style similarities</h4>
@@ -334,57 +335,77 @@
                 </div>
             </div>
 
-	    <!-- Zhixun -->
+            <!-- Zhixun -->
             <div class="content-section" id="section4">
                 <div class="blurb" id="blurb4">
                     <h3 class="slide-header">Beer Name, Beer Flavor</h3>
                     <p>
-					Do beer names like "Tokyo" influence users' focus on oriental spices like coriander? We investigate how a beer's name, with its emotional tone (ranging from descriptive, like 'Co-op Wheat Beer,' to creative, such as 'Pheasantry Dancing Dragonfly') and language, may influence reviews.
-					<!-- To identify language, we use the langdetect library based on Google's language-detection library. For sentiment analysis, we employ Hugging Face's transformers library with a pre-trained bert-base-multilingual-uncased-sentiment model. -->
-					</p>
+                        Do beer names like "Tokyo" influence users' focus on oriental spices like coriander? We
+                        investigate how a beer's name, with its emotional tone (ranging from descriptive, like 'Co-op
+                        Wheat Beer,' to creative, such as 'Pheasantry Dancing Dragonfly') and language, may influence
+                        reviews.
+                        <!-- To identify language, we use the langdetect library based on Google's language-detection library. For sentiment analysis, we employ Hugging Face's transformers library with a pre-trained bert-base-multilingual-uncased-sentiment model. -->
+                    </p>
                 </div>
                 <div class="analysis">
-					<p>
-					The impact of beer taste on ratings is easy to understand and obvious. But at the same time, we are thinking, are there other hidden factors that will affect the rating?
-					</p>
-					<h4> The impact of different languages of beer on ratings </h4>
                     <p>
-					We first looked at the language of the beer names. Among beer names, English accounts for the largest proportion, reaching about 30%. we take beer names in English, French, German, Italian, Dutch, and Spanish as the main research objects.
-					</p>
-                    <div id="language_dis" class="plotly-chart" align="center"></div>				
-					<p>
-					We found that the language of a beer’s name had a significant impact on its rating. Among them, compared with other languages, the distribution of German and Dutch beer names can increase the beer score by 0.04, 0.05, at a 5% confidence level.
-					<br>
-                    <br>
-					Interestingly, the two languages are considered highly similar. We speculate that this may be related to German beer culture and reputation.
-					We found similar views in the literature.
-					Barlow <i>et al.</i> (2018) found that knowledgeable consumers rated American lagers lower than other beers, including German and Czech style lagers, even though the taste and flavor attributes of these styles are very similar to those of American lagers. 
-					</p>
-					<div id="beername1" class="plotly-chart" align="center"></div>
-					<h4> The impact of sentiment conveyed by beer on ratings </h4>
-					<p>
-					In addition to language, we delve deeper into the linguistic sentiment conveyed by beer. We divided the linguistic sentiment of beer names into five levels from 1 to 5. 
-					<br>
-					<br>
-					We found that, overall, the sentiment of positive beer names had a significant positive impact on their ratings. Each increase in emotional level can increase the beer rating by 0.01.
-					<br>
-					<br>
-					In subsamples from different users' locations, this positive impact of language sentiment is significant for users in the United States and Canada, but not significant in Europe.
-					</p>
-					<div id="beername2" class="plotly-chart" align="center"></div>
-					<p>
-					Then, we replaced the explained variable (rating) with beer characteristics: abv, appearance, aroma, palate, and taste. We found that positive beer sentiments have a significant positive impact on appearance, aroma, palate, and taste, especially taste. (There is no doubt that abv is objectively unaffected.)
-					A significant increase in flavor resulted in an increase in ratings. This result is consistent with our analysis in the previous section.
-					</p>
-					<div id="beername4" class="plotly-chart" align="center"></div>
-					<h4> The impact of the sentiment conveyed by beer names in various languages on ratings </h4>					
-					<p>
-					Furthermore, if we focus on both language and language sentiment, what will we find?
-					<br>
-					<br>
-					The intersection of sentiment and language shows that this positive effect of sentiment is enhanced in beers named in French and Spanish. In German and Italian, negative effects are shown.
-					</p>
-					<div id="beername3" class="plotly-chart" align="center"></div>
+                        The impact of beer taste on ratings is easy to understand and obvious. But at the same time, we
+                        are thinking, are there other hidden factors that will affect the rating?
+                    </p>
+                    <h4> The impact of different languages of beer on ratings </h4>
+                    <p>
+                        We first looked at the language of the beer names. Among beer names, English accounts for the
+                        largest proportion, reaching about 30%. we take beer names in English, French, German, Italian,
+                        Dutch, and Spanish as the main research objects.
+                    </p>
+                    <div id="language_dis" class="plotly-chart" align="center"></div>
+                    <p>
+                        We found that the language of a beer’s name had a significant impact on its rating. Among them,
+                        compared with other languages, the distribution of German and Dutch beer names can increase the
+                        beer score by 0.04, 0.05, at a 5% confidence level.
+                        <br>
+                        <br>
+                        Interestingly, the two languages are considered highly similar. We speculate that this may be
+                        related to German beer culture and reputation.
+                        We found similar views in the literature.
+                        Barlow <i>et al.</i> (2018) found that knowledgeable consumers rated American lagers lower than
+                        other beers, including German and Czech style lagers, even though the taste and flavor
+                        attributes of these styles are very similar to those of American lagers.
+                    </p>
+                    <div id="beername1" class="plotly-chart" align="center"></div>
+                    <h4> The impact of sentiment conveyed by beer on ratings </h4>
+                    <p>
+                        In addition to language, we delve deeper into the linguistic sentiment conveyed by beer. We
+                        divided the linguistic sentiment of beer names into five levels from 1 to 5.
+                        <br>
+                        <br>
+                        We found that, overall, the sentiment of positive beer names had a significant positive impact
+                        on their ratings. Each increase in emotional level can increase the beer rating by 0.01.
+                        <br>
+                        <br>
+                        In subsamples from different users' locations, this positive impact of language sentiment is
+                        significant for users in the United States and Canada, but not significant in Europe.
+                    </p>
+                    <div id="beername2" class="plotly-chart" align="center"></div>
+                    <p>
+                        Then, we replaced the explained variable (rating) with beer characteristics: abv, appearance,
+                        aroma, palate, and taste. We found that positive beer sentiments have a significant positive
+                        impact on appearance, aroma, palate, and taste, especially taste. (There is no doubt that abv is
+                        objectively unaffected.)
+                        A significant increase in flavor resulted in an increase in ratings. This result is consistent
+                        with our analysis in the previous section.
+                    </p>
+                    <div id="beername4" class="plotly-chart" align="center"></div>
+                    <h4> The impact of the sentiment conveyed by beer names in various languages on ratings </h4>
+                    <p>
+                        Furthermore, if we focus on both language and language sentiment, what will we find?
+                        <br>
+                        <br>
+                        The intersection of sentiment and language shows that this positive effect of sentiment is
+                        enhanced in beers named in French and Spanish. In German and Italian, negative effects are
+                        shown.
+                    </p>
+                    <div id="beername3" class="plotly-chart" align="center"></div>
                 </div>
             </div>
 
@@ -392,66 +413,104 @@
             <div class="content-section" id="section5">
                 <div class="blurb" id="blurb5">
                     <h3 class="slide-header">Let's Recommend!</h3>
-                    <p>After a careful analysis on review data from beer rating platforms, we'd love to recommend beers for thirsty beer hunters 
-                        based on personalized demands and different criteria. Hop on and see if you can find your dream beer with us!  </p>
+                    <p>After a careful analysis on review data from beer rating platforms, we'd love to recommend beers
+                        for thirsty beer hunters
+                        based on personalized demands and different criteria. Hop on and see if you can find your dream
+                        beer with us! </p>
                 </div>
                 <div class="analysis">
                     <h4>Regional recommendations </h4>
                     <p>
-                        Considering the wide geographic spread of both breweries and users, coupled with our discovery of the notable influence of beer name language on ratings, it's apparent that beer preferences can vary significantly across 
-                        different regions. Therefore, in our recommendation system, we aim to go beyond merely evaluating various beer characteristics. Our goal is to also incorporate the intricate anthropological factors inherent in geographic locations, 
-                        ensuring our recommendations resonate with the diverse tastes and cultural nuances of beer enthusiasts worldwide. 
+                        Considering the wide geographic spread of both breweries and users, coupled with our discovery
+                        of the notable influence of beer name language on ratings, it's apparent that beer preferences
+                        can vary significantly across
+                        different regions. Therefore, in our recommendation system, we aim to go beyond merely
+                        evaluating various beer characteristics. Our goal is to also incorporate the intricate
+                        anthropological factors inherent in geographic locations,
+                        ensuring our recommendations resonate with the diverse tastes and cultural nuances of beer
+                        enthusiasts worldwide.
                     </p>
                     <br>
                     <p>
-                        To achieve this, we first grouped the reviews entries into wider world regions based on user location. Recognizing that different platforms often used varying names for identical beers and styles, we undertook a mapping and normalization process 
-                        to enable a unified analysis across these platforms. For each region, beers were ranked based on a combined score comprising their average ratings and the volume of reviews. The top three beers and styles for each region are prominently displayed. 
-                        In our visual representation, larger bubbles signify a greater number of reviews from that region, while a darker hue indicates a higher proportion of reviews for the most popular beer in that region.
+                        To achieve this, we first grouped the reviews entries into wider world regions based on user
+                        location. Recognizing that different platforms often used varying names for identical beers and
+                        styles, we undertook a mapping and normalization process
+                        to enable a unified analysis across these platforms. For each region, beers were ranked based on
+                        a combined score comprising their average ratings and the volume of reviews. The top three beers
+                        and styles for each region are prominently displayed.
+                        In our visual representation, larger bubbles signify a greater number of reviews from that
+                        region, while a darker hue indicates a higher proportion of reviews for the most popular beer in
+                        that region.
                     </p>
                     <br>
-                    
+
                     <div id="regional_analysis" class="plotly-chart"></div>
 
                     <p>
-                        From the results, we can see that the top beers and styles in different regions are quite different. For instance, in the United States, Trappistes Rochefort 10 is a familiar favorite, while those traveling to South America might find Falke Tripel Monasterium 
-                        an appealing local taste to explore. However, it's important to note that the distribution of reviews by location is uneven, which could affect the representativeness of the data for certain regions. A case in point is Africa, where we have only one review entry. 
-                        Consequently, these findings are reflective of the trends within our specific dataset and should be interpreted with caution, as they might not fully encapsulate broader regional preferences.
+                        From the results, we can see that the top beers and styles in different regions are quite
+                        different. For instance, in the United States, Trappistes Rochefort 10 is a familiar favorite,
+                        while those traveling to South America might find Falke Tripel Monasterium
+                        an appealing local taste to explore. However, it's important to note that the distribution of
+                        reviews by location is uneven, which could affect the representativeness of the data for certain
+                        regions. A case in point is Africa, where we have only one review entry.
+                        Consequently, these findings are reflective of the trends within our specific dataset and should
+                        be interpreted with caution, as they might not fully encapsulate broader regional preferences.
                     </p>
                     <br>
                     <h4>Qualitative and similarity recommendations </h4>
                     <p>
-                        In addition to the regional recommendation, we also want to provide a more personalized recommendation based on the users' preferred beer quality. We extracted the 
-                        top 10 descriptive words from previous reviews for each beer and style, and this kind of recommendation is based on containment relationships of this adjective set
-                        to the qualititive query. Some examples from our recommendation are displayed below. Furthermore, we enhance user experience by visualizing a word cloud of descriptive terms for each recommended beer. This approach allows users to gain a nuanced understanding 
-                        of the beer's characteristics before making their choice. Additionally, for those who have enjoyed a particular beer style and wish to explore similar options, our tool facilitates this exploration through an analysis of beer similarities previously conducted. 
+                        In addition to the regional recommendation, we also want to provide a more personalized
+                        recommendation based on the users' preferred beer quality. We extracted the
+                        top 10 descriptive words from previous reviews for each beer and style, and this kind of
+                        recommendation is based on containment relationships of this adjective set
+                        to the qualititive query. Some examples from our recommendation are displayed below.
+                        Furthermore, we enhance user experience by visualizing a word cloud of descriptive terms for
+                        each recommended beer. This approach allows users to gain a nuanced understanding
+                        of the beer's characteristics before making their choice. Additionally, for those who have
+                        enjoyed a particular beer style and wish to explore similar options, our tool facilitates this
+                        exploration through an analysis of beer similarities previously conducted.
                         This feature is designed to further personalize and refine the recommendation process.
                     </p>
 
-                    
-                        <div id="recommendation_keyword" class="plotly-chart"></div>
-                        <div id="recommendation_similarity" class="plotly-chart"></div>
-                
+
+                    <div id="recommendation_keyword" class="plotly-chart"></div>
+                    <div id="recommendation_similarity" class="plotly-chart"></div>
+
                 </div>
             </div>
 
-			<div class="content-section" id="section6">
+            <div class="content-section" id="section6">
                 <div class="blurb" id="blurb6">
                     <h3 class="slide-header">Conclusion</h3>
                     <p>
-					The dataset, merging BeerAdvocate and RateBeer, includes 6,084 breweries, 45,640 beers, and 1.2 million ratings. Ratings align between platforms, and correlations highlight taste and aroma agreement. American IPA prevails in diverse beer styles, reflecting global brewing diversity with heightened US user engagement.					<br>
-					<br>
-					Analyzing beer style similarities using textual descriptors and numerical ranges, we found that English Brown Ale and American Brown Ale exhibit high similarity, while Smoked Beer stands out as notably different. Specific characteristics contribute to each style's uniqueness.
-					<br>
-					<br>
-					Continuing, our attention turns to the names of the beers.  A noteworthy rise of around 0.05 points is evident for German and Dutch names. Positive emotional sentiments in names notably boost ratings, particularly for US and Canadian users, impacting taste, aroma, and palate. French and Spanish names also show a significant positive impact from emotional sentiment.
-					<br>
-					<br>
-					text
-					</p>
+                        The dataset, merging BeerAdvocate and RateBeer, includes 6,084 breweries, 45,640 beers, and 1.2
+                        million ratings. Ratings align between platforms, and correlations highlight taste and aroma
+                        agreement. American IPA prevails in diverse beer styles, reflecting global brewing diversity
+                        with heightened US user engagement. <br>
+                        <br>
+                        Analyzing beer style similarities using textual descriptors and numerical ranges, we found that
+                        English Brown Ale and American Brown Ale exhibit high similarity, while Smoked Beer stands out
+                        as notably different. Specific characteristics contribute to each style's uniqueness.
+                        <br>
+                        <br>
+                        Then we apply clustering techniques to categorize beers based on key attributes like taste
+                        and aroma, etc. By integrating this with regression analysis, we effectively determine beer
+                        preferences and the factors driving ratings. This approach enables us to offer targeted
+                        recommendations and insights into regional beer tastes.
+                        <br>
+                        <br>
+                        Continuing, our attention turns to the names of the beers. A noteworthy rise of around 0.05
+                        points is evident for German and Dutch names. Positive emotional sentiments in names notably
+                        boost ratings, particularly for US and Canadian users, impacting taste, aroma, and palate.
+                        French and Spanish names also show a significant positive impact from emotional sentiment.
+                        <br>
+                        <br>
+                        text
+                    </p>
                 </div>
-			</div>		
-			
-			<div class="spacing"></div>
+            </div>
+
+            <div class="spacing"></div>
             <div class="spacing"></div>
             <div class="spacing"></div>
             <div class="spacing"></div>
@@ -460,20 +519,22 @@
                 <h2>Sources & Reference</h2>
                 <p> RateBeer;
                     Beer Adovocate;
-                    Craft Beer; 
-                    Brewers Association; 
-					<br>
-					<br>
-					Barlow, M. A., Verhaal, J. C., & Hoskins, J. D. (2018). Guilty by association: Product-level category stigma and audience expectations in the US craft beer industry. <i>Journal of Management, 44(7)</i>, 2934-2960.
+                    Craft Beer;
+                    Brewers Association;
+                    <br>
+                    <br>
+                    Barlow, M. A., Verhaal, J. C., & Hoskins, J. D. (2018). Guilty by association: Product-level
+                    category stigma and audience expectations in the US craft beer industry. <i>Journal of Management,
+                        44(7)</i>, 2934-2960.
                 </p>
             </div>
-			
-			<div class="spacing"></div>
-			<div class="spacing"></div>
-			
-			<h3 style="font-size:1.5em; color:#556B2F">Wish you a merry Christmas and a hoppy drink!</h3>		
+
+            <div class="spacing"></div>
+            <div class="spacing"></div>
+
+            <h3 style="font-size:1.5em; color:#556B2F">Wish you a merry Christmas and a hoppy drink!</h3>
             <img src="img/end.png" alt="meme" width="500" id="meme-image">
-			
+
         </div>
     </div>
 

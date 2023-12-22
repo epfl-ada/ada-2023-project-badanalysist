@@ -19,10 +19,8 @@ In data preprocessing, we chose pre-processed files (beers.csv, breweries.csv, r
 Additionally, we enriched our beer style descriptions using a web crawler to extract data mainly from a beer association website and a craft beer website. This extra data, detailing aspects like color, aroma, bitterness, and fermentation characteristics, aids in comprehensively understanding and differentiating beer styles.[^2][^3]
 
 ## Project Plans & Methods
-### Task 1: Clustering for Popularity and User Taste Preference
-In our initial analysis of the rating dataset, we have identified key attributes such as taste, palate, aroma, appearance, and abv (alcohol by volume), and aim to explore their interrelations and impact on the overall rating. Our preliminary ridge regression model reveals that these five attributes explain the overall rating to a great extent (R^2 = 0.76) in the test set.
-
-We plan to use k-means clustering integrated with regression analysis to categorize beers based on these attributes and assess their impact on ratings and regional preferences. This approach will inform targeted customer recommendations and help breweries improve their products' appeal.
+### Task 1: Clustering and User Taste Preference
+We advanced from our initial proposal. We developed a 'CosineKMeans' class, applying k-means clustering based on cosine distance specifically to beer attributes like taste, palate, aroma, appearance, and alcohol by volume (ABV). This nuanced approach allowed us to categorize beers more effectively. Additionally, we integrated ridge regression with k-means to determine the optimal number of clusters (k), using a voting mechanism for entries that appeared multiple times. Our analysis involved examining the characteristics of each beer category and assessing the importance of different features through ridge regression. 
 
 ### Task 2: Beer Name Reflect Beer Flavor
 Do beer names like "Tokyo" influence users' focus on oriental spices like coriander? We investigate how a beer's name, with its emotional tone (ranging from descriptive, like 'Co-op Wheat Beer,' to creative, such as 'Pheasantry Dancing Dragonfly') and language, may influence reviews.
@@ -51,8 +49,8 @@ We're creating a beer recommendation tool that utilizes beer review platform dat
 **22.12.2023** Milestone 3 Deadline
 
 ## Team Organization
-- Siyuan: basic statistic visualization; ...
-- Zhixun: task 2
+- Siyuan: Basic statistic visualization; Task 1
+- Zhixun: Task 2
 - Xinyi: web set up and design; basic statistic visualization and analysis; beer style similarity visualization and analysis;
 - Yihan: recommendation logic design, implementation and visualization, regional preference analysis and visualization, descriptive keyword extraction
 
